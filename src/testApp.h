@@ -71,8 +71,7 @@ private:
 	GLfloat			rotatePerSecondVariance;		// Variance in degrees for rotatePerSecond
     
     bool            bPlay, bSaveParticleXML, bNormal, bAddictive;
-    bool            circle1, circle2, circle3, particle1, particle2, particle3, particle4, particle5, particle6;
-    bool            circles, drugs, fire, sun, waterfall, jellyfish;
+
     
     int             blendSrc, blendDst;
     

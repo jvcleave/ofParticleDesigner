@@ -17,15 +17,15 @@
     </SliderFloat_Source_Pos_Y_Var>
     <SliderFloat_Angle>
         <name>Angle</name>
-        <value>180</value>
+        <value>357</value>
     </SliderFloat_Angle>
     <SliderFloat_Angle_Var>
         <name>Angle Var</name>
-        <value>27</value>
+        <value>190</value>
     </SliderFloat_Angle_Var>
     <SliderFloat_LifeSpan>
         <name>LifeSpan</name>
-        <value>1.25</value>
+        <value>3</value>
     </SliderFloat_LifeSpan>
     <SliderFloat_LifeSpan_Var>
         <name>LifeSpan Var</name>
@@ -33,15 +33,15 @@
     </SliderFloat_LifeSpan_Var>
     <SliderFloat_Start_Size>
         <name>Start Size</name>
-        <value>24</value>
+        <value>49</value>
     </SliderFloat_Start_Size>
     <SliderFloat_Start_Size_Var>
         <name>Start Size Var</name>
-        <value>15</value>
+        <value>60</value>
     </SliderFloat_Start_Size_Var>
     <SliderFloat_Finish_Size>
         <name>Finish Size</name>
-        <value>64</value>
+        <value>31</value>
     </SliderFloat_Finish_Size>
     <SliderFloat_Finish_Size_Var>
         <name>Finish Size Var</name>
@@ -53,15 +53,15 @@
     </ComboBox_Emitter_Type>
     <SliderFloat_Speed>
         <name>Speed</name>
-        <value>32.89</value>
+        <value>95</value>
     </SliderFloat_Speed>
     <SliderFloat_Speed_Var>
         <name>Speed Var</name>
-        <value>243.42</value>
+        <value>211</value>
     </SliderFloat_Speed_Var>
     <SliderFloat_Radial_Acc>
         <name>Radial Acc</name>
-        <value>-10</value>
+        <value>0</value>
     </SliderFloat_Radial_Acc>
     <SliderFloat_Radial_Acc_Var>
         <name>Radial Acc Var</name>
@@ -77,11 +77,11 @@
     </SliderFloat_Tan_Acc_Var>
     <SliderFloat_Gravity_X>
         <name>Gravity X</name>
-        <value>0</value>
+        <value>0.7</value>
     </SliderFloat_Gravity_X>
     <SliderFloat_Gravity_Y>
         <name>Gravity Y</name>
-        <value>0</value>
+        <value>-1.43</value>
     </SliderFloat_Gravity_Y>
     <SliderFloat_Max_Radius>
         <name>Max Radius</name>

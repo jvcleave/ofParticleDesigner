@@ -23,7 +23,12 @@
 #include "testApp.h"
 
 #include "ofxSimpleGuiToo.h"
-
+int pexID;
+int textureID;
+int currentTextureID;
+int currentPexID;
+vector<string> pexFileNames;
+vector<string> textureFileNames;
 //--------------------------------------------------------------
 void testApp::setup(){
 
@@ -33,23 +38,7 @@ void testApp::setup(){
     loadFromParticleXML( "circles.pex" );
     
     bPlay = false;
-    circle1 = false;
-    circle2 = false;
-    circle3 = false;
-    particle1 = false;
-    particle2 = false;
-    particle3 = false;
-    particle4 = false;
-    particle5 = false;
-    particle6 = false;
-    
-    circles = false;
-    drugs = false;
-    fire = false;
-    sun = false;
-    waterfall = false;
-    jellyfish = false;
-    
+        
     speed = 0.0;
     duration = -1.0;
     
@@ -127,25 +116,31 @@ void testApp::setup(){
     //----------- GALLERY ----------------
     gui.addPage("Gallery");
     gui.addTitle("Partilce Texture");
-    gui.addButton("Circle 1", circle1);
-    gui.addButton("Circle 2", circle2);
-    gui.addButton("Circle 3", circle3);
-    gui.addButton("Particle 1", particle1);
-    gui.addButton("Particle 2", particle2);
-    gui.addButton("Particle 3", particle3);
-    gui.addButton("Particle 4", particle4);
-    gui.addButton("Particle 5", particle5);
-    gui.addButton("Particle 6", particle6);
-    gui.addTitle("Save");
-    gui.addButton("Save Particle XML", bSaveParticleXML);
-    gui.addTitle("Gallery");
-    gui.addButton("Circles", circles);
-    gui.addButton("Drugs", drugs);
-    gui.addButton("Fire", fire);
-    gui.addButton("Sun", sun);
-    gui.addButton("Waterfall", waterfall);
-    gui.addButton("JellyFish", jellyfish);
-    
+
+	pexID = currentPexID =  0;
+	textureID = currentTextureID = 0;
+	ofDirectory dir = ofToDataPath("", true);
+	dir.listDir();
+	vector<ofFile> files = dir.getFiles();
+	
+	for(int i=0; i<files.size(); i++)
+	{
+		cout << files[i].getExtension() << endl;
+		
+		string fileExtension = files[i].getExtension();
+		string fileName = files[i].getFileName();
+		if (fileExtension == "pex")
+		{
+			pexFileNames.push_back(fileName);
+		}
+		if (fileExtension == "jpg" || fileExtension == "png")
+		{
+			textureFileNames.push_back(fileName);
+		}
+	}
+	
+	gui.addComboBox("TEXTURE FILE", textureID, textureFileNames.size(),  &textureFileNames[0]);
+    gui.addComboBox("SOURCE", pexID, pexFileNames.size(),  &pexFileNames[0]);
     gui.setPage(1);
     gui.show();
     
@@ -183,70 +178,17 @@ void testApp::update(){
         bSaveParticleXML = false;
         saveToParticleXML();
     }
-    else if( circle1 ) {
-        circle1 = false;
-        m_emitter.changeTexture("circle1.png");
-    }
-    else if( circle2 ) {
-        circle2 = false;
-        m_emitter.changeTexture("circle2.png");
-    }
-    else if( circle3 ) {
-        circle3 = false;
-        m_emitter.changeTexture("circle3.png");
-    }
-    else if( particle1 ) {
-        particle1 = false;
-        m_emitter.changeTexture("particle1.png");
-    }
-    else if( particle2 ) {
-        particle2 = false;
-        m_emitter.changeTexture("particle2.png");
-    }
-    else if( particle3 ) {
-        particle3 = false;
-        m_emitter.changeTexture("particle3.png");
-    }
-    else if( particle4 ) {
-        particle4 = false;
-        m_emitter.changeTexture("particle4.png");
-    }
-    else if( particle5 ) {
-        particle5 = false;
-        m_emitter.changeTexture("particle5.png");
-    }
-    else if( particle6 ) {
-        particle6 = false;
-        m_emitter.changeTexture("particle6.png");
-    }
-    else if( circles ) {
-        circles = false;
-        loadFromParticleXML("circles.pex");
-    }
-    else if( drugs ) {
-        drugs = false;
-        loadFromParticleXML("drugs.pex");
-    }
-    else if( fire ) {
-        fire = false;
-        loadFromParticleXML("fire.pex");
-    }
-    else if( sun ) {
-        sun = false;
-        loadFromParticleXML("sun.pex");
-    }
-    else if( waterfall ) {
-        waterfall = false;
-        loadFromParticleXML("waterfall.pex");
-    }
-    else if( jellyfish ) {
-        jellyfish = false;
-        loadFromParticleXML("jellyfish.pex");
-    }
-    else {
-        //ofSetWindowTitle("Released");
-    }
-    
+	if (currentPexID != pexID)
+	{
+		currentPexID = pexID;	
+		loadFromParticleXML(pexFileNames[currentPexID]);
+	}
+	if ( currentTextureID!= textureID)
+	{
+		currentTextureID = textureID;
+		m_emitter.changeTexture(textureFileNames[currentTextureID]);
+	}
+        
     setBlendType(blendSrc, m_emitter.blendFuncSource);
     setBlendType(blendDst, m_emitter.blendFuncDestination);
     

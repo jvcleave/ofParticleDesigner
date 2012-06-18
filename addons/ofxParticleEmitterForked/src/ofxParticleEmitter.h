@@ -102,10 +102,7 @@ static inline ofVec2f ofVec2fSub(ofVec2f v1, ofVec2f v2) {
 	return r;
 }
 
-// Return the dot product of v1 and v2
-static inline GLfloat ofVec2fDot(ofVec2f v1, ofVec2f v2) {
-	return (GLfloat) v1.x * v2.x + v1.y * v2.y;
-}
+
 
 // Return a ofVec2f containing a normalized vector v
 static inline ofVec2f ofVec2fNormalize(ofVec2f v) {

@@ -23,9 +23,9 @@
 	};
 	031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1345, 2600}}";
-			sepNavSelRange = "{3322, 0}";
-			sepNavVisRange = "{2420, 1698}";
+			sepNavIntBoundsRect = "{{0, 0}, {1345, 2548}}";
+			sepNavSelRange = "{3178, 0}";
+			sepNavVisRange = "{2420, 1700}";
 		};
 	};
 	031F0CF714B4197D00FAE8D2 /* ofxSimpleGuiPage.cpp */ = {
@@ -269,7 +269,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 172";
 		rLen = 0;
-		rLoc = 4409;
+		rLoc = 4265;
 		rType = 0;
 		vrLen = 1746;
 		vrLoc = 2130;
@@ -319,7 +319,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 171";
 		rLen = 0;
-		rLoc = 4350;
+		rLoc = 4206;
 		rType = 0;
 		vrLen = 2110;
 		vrLoc = 4165;
@@ -406,7 +406,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 171";
 		rLen = 54;
-		rLoc = 4342;
+		rLoc = 4198;
 		rType = 0;
 		vrLen = 2110;
 		vrLoc = 4165;
@@ -426,7 +426,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 107";
 		rLen = 0;
-		rLoc = 3322;
+		rLoc = 3178;
 		rType = 0;
 		vrLen = 1512;
 		vrLoc = 2733;
@@ -436,7 +436,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 107";
 		rLen = 0;
-		rLoc = 3322;
+		rLoc = 3178;
 		rType = 0;
 		vrLen = 1512;
 		vrLoc = 2733;
@@ -446,7 +446,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 96";
 		rLen = 0;
-		rLoc = 3322;
+		rLoc = 3178;
 		rType = 0;
 		vrLen = 2030;
 		vrLoc = 2733;
@@ -456,7 +456,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 104";
 		rLen = 0;
-		rLoc = 3438;
+		rLoc = 3294;
 		rType = 0;
 		vrLen = 1923;
 		vrLoc = 2810;
@@ -476,7 +476,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 96";
 		rLen = 0;
-		rLoc = 3322;
+		rLoc = 3178;
 		rType = 0;
 		vrLen = 1487;
 		vrLoc = 1379;
@@ -544,7 +544,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 127";
 		rLen = 16;
-		rLoc = 3399;
+		rLoc = 3255;
 		rType = 0;
 		vrLen = 1504;
 		vrLoc = 2637;
@@ -554,7 +554,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 119";
 		rLen = 0;
-		rLoc = 3322;
+		rLoc = 3178;
 		rType = 0;
 		vrLen = 1440;
 		vrLoc = 2713;
@@ -564,7 +564,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 127";
 		rLen = 0;
-		rLoc = 3377;
+		rLoc = 3233;
 		rType = 0;
 		vrLen = 1504;
 		vrLoc = 2637;
@@ -614,7 +614,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 128";
 		rLen = 0;
-		rLoc = 3456;
+		rLoc = 3312;
 		rType = 0;
 		vrLen = 1504;
 		vrLoc = 2637;
@@ -634,7 +634,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 129";
 		rLen = 0;
-		rLoc = 3456;
+		rLoc = 3312;
 		rType = 0;
 		vrLen = 1457;
 		vrLoc = 3156;
@@ -684,7 +684,7 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 111";
 		rLen = 0;
-		rLoc = 3322;
+		rLoc = 3178;
 		rType = 0;
 		vrLen = 1723;
 		vrLoc = 2309;
@@ -694,9 +694,19 @@
 		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
 		name = "ofxParticleEmitter.h: 108";
 		rLen = 0;
-		rLoc = 3322;
+		rLoc = 3178;
 		rType = 0;
 		vrLen = 1698;
+		vrLoc = 2420;
+	};
+	346845A5158FD1AA002441A1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031F0C8914B4183200FAE8D2 /* ofxParticleEmitter.h */;
+		name = "ofxParticleEmitter.h: 105";
+		rLen = 0;
+		rLoc = 3178;
+		rType = 0;
+		vrLen = 1700;
 		vrLoc = 2420;
 	};
 	E4B69B4C0A3A1720003C02F2 /* Project object */ = {
@@ -792,6 +802,7 @@
 			346845A0158FD107002441A1 /* PBXTextBookmark */ = 346845A0158FD107002441A1 /* PBXTextBookmark */;
 			346845A1158FD107002441A1 /* PBXTextBookmark */ = 346845A1158FD107002441A1 /* PBXTextBookmark */;
 			346845A2158FD107002441A1 /* PBXTextBookmark */ = 346845A2158FD107002441A1 /* PBXTextBookmark */;
+			346845A5158FD1AA002441A1 /* PBXTextBookmark */ = 346845A5158FD1AA002441A1 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 346844A8158FC047002441A1 /* Source Control */;
 		userBuildSettings = {

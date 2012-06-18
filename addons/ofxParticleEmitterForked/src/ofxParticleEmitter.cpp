@@ -273,7 +273,7 @@ void ofxParticleEmitter::initParticle( Particle* particle )
 	
 	// The particles direction vector is calculated by taking the vector calculated above and
 	// multiplying that by the speed
-	particle->direction = ofVec2fMultiply(vector, vectorSpeed);
+	particle->direction = vector*vectorSpeed;
 	
 	// Set the default diameter of the particle from the source position
 	particle->radius = maxRadius + maxRadiusVariance * RANDOM_MINUS_1_TO_1();
@@ -402,17 +402,17 @@ void ofxParticleEmitter::update()
                 
                 tangential.x = radial.x;
                 tangential.y = radial.y;
-                radial = ofVec2fMultiply(radial, currentParticle->radialAcceleration);
+                radial = radial*currentParticle->radialAcceleration;
                 
                 GLfloat newy = tangential.x;
                 tangential.x = -tangential.y;
                 tangential.y = newy;
-                tangential = ofVec2fMultiply(tangential, currentParticle->tangentialAcceleration);
+                tangential = tangential*currentParticle->tangentialAcceleration;
                 
 				tmp = radial+tangential+gravity;
-                tmp = ofVec2fMultiply(tmp, aDelta);
+                tmp = tmp*aDelta;
 				currentParticle->direction = currentParticle->direction+tmp;
-				tmp = ofVec2fMultiply(currentParticle->direction, aDelta);
+				tmp = currentParticle->direction*aDelta;
 				currentParticle->position = currentParticle->position+tmp;
                 currentParticle->position = currentParticle->position+diff;
 			}

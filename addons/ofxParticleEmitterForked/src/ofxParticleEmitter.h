@@ -94,17 +94,6 @@ static const ofFloatColor ofColorOnes(1.0f, 1.0f, 1.0f, 1.0f);
 static const ofVec2f ofVec2fZero(0.0f, 0.0f);
 
 
-
-// Return a ofVec2f containing v multiplied by s
-static inline ofVec2f ofVec2fMultiply(ofVec2f v, GLfloat s) {
-	ofVec2f r; 
-	r.x = v.x * s;
-	r.y = v.y * s;
-	return r;
-}
-
-
-
 // Return a ofVec2f containing v1 - v2
 static inline ofVec2f ofVec2fSub(ofVec2f v1, ofVec2f v2) {
 	ofVec2f r; 
@@ -118,14 +107,9 @@ static inline GLfloat ofVec2fDot(ofVec2f v1, ofVec2f v2) {
 	return (GLfloat) v1.x * v2.x + v1.y * v2.y;
 }
 
-// Return the length of the vector v
-static inline GLfloat ofVec2fLength(ofVec2f v) {
-	return (GLfloat) sqrtf(ofVec2fDot(v, v));
-}
-
 // Return a ofVec2f containing a normalized vector v
 static inline ofVec2f ofVec2fNormalize(ofVec2f v) {
-	return ofVec2fMultiply(v, 1.0f/ofVec2fLength(v));
+	return v*1.0f/v.length();
 }
 
 #define MAXIMUM_UPDATE_RATE 90.0f	// The maximum number of updates that occur per frame

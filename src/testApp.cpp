@@ -100,10 +100,10 @@ void testApp::setup(){
     //----------- COLOR ------------------
     gui.addPage("Color");
     gui.addTitle("Color");
-	gui.addColorPicker("Start Color", &(m_emitter.startColor).red);
-    gui.addColorPicker("Start Color Var", &(m_emitter.startColorVariance).red);
-    gui.addColorPicker("End Color", &(m_emitter.finishColor).red);
-    gui.addColorPicker("End Color Var", &(m_emitter.finishColorVariance).red);
+	gui.addColorPicker("Start Color", &(m_emitter.startColor).r);
+    gui.addColorPicker("Start Color Var", &(m_emitter.startColorVariance).r);
+    gui.addColorPicker("End Color", &(m_emitter.finishColor).r);
+    gui.addColorPicker("End Color Var", &(m_emitter.finishColorVariance).r);
     
     gui.addTitle("Blend Mode");
     string glTitleArray[] = {"GL_ZERO", "GL_ONE", "GL_DST_COLOR", "GL_ONE_MINUS_DST_COLOR", "GL_SRC_ALPHA", "GL_ONE_MINUS_SRC_ALPHA", "GL_DST_ALPHA",
@@ -209,31 +209,31 @@ void testApp::setBlendType(int s, int &val) {
             break;
             
         case 2:
-            val = 0x0306;
+            val = GL_DST_COLOR;
             break;
             
         case 3:
-            val = 0x0307;
+            val = GL_ONE_MINUS_DST_COLOR;
             break;
             
         case 4:
-            val = 0x0302;
+            val = GL_SRC_ALPHA;
             break;
             
         case 5:
-            val = 0x0303;
+            val = GL_ONE_MINUS_SRC_ALPHA;
             break;
             
         case 6:
-            val = 0x0304;
+            val = GL_DST_ALPHA;
             break;
             
         case 7:
-            val = 0x0305;
+            val = GL_ONE_MINUS_DST_ALPHA;
             break;
             
         case 8:
-            val = 0x0308;
+            val = GL_SRC_ALPHA_SATURATE;
             break;
             
         default:
@@ -250,39 +250,39 @@ int testApp::getBlendType(int s) {
     //GL BLEND TYPE
     switch (s) {
             
-        case 0:
+        case GL_ZERO:
             val = 0;
             break;
             
-        case 1:
+        case GL_ONE:
             val = 1;
             break;
             
-        case 0x0306:
+        case GL_DST_COLOR:
             val = 2;
             break;
             
-        case 0x0307:
+        case GL_ONE_MINUS_DST_COLOR:
             val = 3;
             break;
             
-        case 0x0302:
+        case GL_SRC_ALPHA:
             val = 4;
             break;
             
-        case 0x0303:
+        case GL_ONE_MINUS_SRC_ALPHA:
             val = 5;
             break;
             
-        case 0x0304:
+        case GL_DST_ALPHA:
             val = 6;
             break;
             
-        case 0x0305:
+        case GL_ONE_MINUS_DST_ALPHA:
             val = 7;
             break;
             
-        case 0x0308:
+        case GL_SRC_ALPHA_SATURATE:
             val = 8;
             break;
             
@@ -447,34 +447,34 @@ void testApp::saveToParticleXML() {
     XML.popTag();
     
     XML.addTag("startColor");
-    XML.addAttribute("startColor", "red", m_emitter.startColor.red, 0);
-    XML.addAttribute("startColor", "green", m_emitter.startColor.green, 0);
-    XML.addAttribute("startColor", "blue", m_emitter.startColor.blue, 0);
-    XML.addAttribute("startColor", "alpha", m_emitter.startColor.alpha, 0);
+    XML.addAttribute("startColor", "red", m_emitter.startColor.r, 0);
+    XML.addAttribute("startColor", "green", m_emitter.startColor.g, 0);
+    XML.addAttribute("startColor", "blue", m_emitter.startColor.b, 0);
+    XML.addAttribute("startColor", "alpha", m_emitter.startColor.a, 0);
     XML.pushTag("startColor");
     XML.popTag();
     
     XML.addTag("startColorVariance");
-    XML.addAttribute("startColorVariance", "red", m_emitter.startColorVariance.red, 0);
-    XML.addAttribute("startColorVariance", "green", m_emitter.startColorVariance.green, 0);
-    XML.addAttribute("startColorVariance", "blue", m_emitter.startColorVariance.blue, 0);
-    XML.addAttribute("startColorVariance", "alpha", m_emitter.startColorVariance.alpha, 0);
+    XML.addAttribute("startColorVariance", "red", m_emitter.startColorVariance.r, 0);
+    XML.addAttribute("startColorVariance", "green", m_emitter.startColorVariance.g, 0);
+    XML.addAttribute("startColorVariance", "blue", m_emitter.startColorVariance.b, 0);
+    XML.addAttribute("startColorVariance", "alpha", m_emitter.startColorVariance.a, 0);
     XML.pushTag("startColorVariance");
     XML.popTag();
     
     XML.addTag("finishColor");
-    XML.addAttribute("finishColor", "red", m_emitter.finishColor.red, 0);
-    XML.addAttribute("finishColor", "green", m_emitter.finishColor.green, 0);
-    XML.addAttribute("finishColor", "blue", m_emitter.finishColor.blue, 0);
-    XML.addAttribute("finishColor", "alpha", m_emitter.finishColor.alpha, 0);
+    XML.addAttribute("finishColor", "red", m_emitter.finishColor.r, 0);
+    XML.addAttribute("finishColor", "green", m_emitter.finishColor.g, 0);
+    XML.addAttribute("finishColor", "blue", m_emitter.finishColor.b, 0);
+    XML.addAttribute("finishColor", "alpha", m_emitter.finishColor.a, 0);
     XML.pushTag("finishColor");
     XML.popTag();
     
     XML.addTag("finishColorVariance");
-    XML.addAttribute("finishColorVariance", "red", m_emitter.finishColorVariance.red, 0);
-    XML.addAttribute("finishColorVariance", "green", m_emitter.finishColorVariance.green, 0);
-    XML.addAttribute("finishColorVariance", "blue", m_emitter.finishColorVariance.blue, 0);
-    XML.addAttribute("finishColorVariance", "alpha", m_emitter.finishColorVariance.alpha, 0);
+    XML.addAttribute("finishColorVariance", "red", m_emitter.finishColorVariance.r, 0);
+    XML.addAttribute("finishColorVariance", "green", m_emitter.finishColorVariance.g, 0);
+    XML.addAttribute("finishColorVariance", "blue", m_emitter.finishColorVariance.b, 0);
+    XML.addAttribute("finishColorVariance", "alpha", m_emitter.finishColorVariance.a, 0);
     XML.pushTag("finishColorVariance");
     XML.popTag();
     

@@ -30,5 +30,5 @@
     <rotatePerSecond value="0"></rotatePerSecond>
     <rotatePerSecondVariance value="0"></rotatePerSecondVariance>
     <blendFuncSource value="770"></blendFuncSource>
-    <blendFuncDestination value="771"></blendFuncDestination>
+    <blendFuncDestination value="1"></blendFuncDestination>
 </particleEmitterConfig>

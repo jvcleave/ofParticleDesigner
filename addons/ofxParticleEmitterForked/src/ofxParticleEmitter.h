@@ -31,19 +31,9 @@
 // Structures
 // ------------------------------------------------------------------------
 
-// Structure that defines the elements which make up a color
-typedef struct {
-	GLfloat red;
-	GLfloat green;
-	GLfloat blue;
-	GLfloat alpha;
-} Color4f;
 
-// Structure that defines a vector using x and y
-typedef struct {
-	GLfloat x;
-	GLfloat y;
-} Vector2f;
+
+
 
 // Particle type
 enum kParticleTypes 
@@ -58,17 +48,17 @@ typedef struct
 	GLfloat x;
 	GLfloat y;
 	GLfloat size;
-	Color4f color;
+	ofFloatColor color;
 } PointSprite;
 
 // Structure used to hold particle specific information
 typedef struct 
 {
-	Vector2f	position;
-	Vector2f	direction;
-    Vector2f	startPos;
-	Color4f		color;
-	Color4f		deltaColor;
+	ofVec2f	position;
+	ofVec2f	direction;
+    ofVec2f	startPos;
+	ofFloatColor		color;
+	ofFloatColor		deltaColor;
     GLfloat		radialAcceleration;
     GLfloat		tangentialAcceleration;
 	GLfloat		radius;
@@ -97,61 +87,51 @@ typedef struct
 // Inline functions
 // ------------------------------------------------------------------------
 
-// Return a Color4f structure populated with 1.0's
-static const Color4f Color4fOnes = {1.0f, 1.0f, 1.0f, 1.0f};
+// Return a ofFloatColor structure populated with 1.0's
+static const ofFloatColor ofColorOnes(1.0f, 1.0f, 1.0f, 1.0f);
 
-// Return a zero populated Vector2f
-static const Vector2f Vector2fZero = {0.0f, 0.0f};
+// Return a zero populated ofVec2f
+static const ofVec2f ofVec2fZero(0.0f, 0.0f);
 
-// Return a populated Vector2d structure from the floats passed in
-static inline Vector2f Vector2fMake(GLfloat x, GLfloat y) {
-	Vector2f r; r.x = x; r.y = y;
-	return r;
-}
 
-// Return a Color4f structure populated with the color values passed in
-static inline Color4f Color4fMake(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha) {
-	Color4f c; c.red = red; c.green = green; c.blue = blue; c.alpha = alpha;
-	return c;
-}
 
-// Return a Vector2f containing v multiplied by s
-static inline Vector2f Vector2fMultiply(Vector2f v, GLfloat s) {
-	Vector2f r; 
+// Return a ofVec2f containing v multiplied by s
+static inline ofVec2f ofVec2fMultiply(ofVec2f v, GLfloat s) {
+	ofVec2f r; 
 	r.x = v.x * s;
 	r.y = v.y * s;
 	return r;
 }
 
-// Return a Vector2f containing v1 + v2
-static inline Vector2f Vector2fAdd(Vector2f v1, Vector2f v2) {
-	Vector2f r; 
+// Return a ofVec2f containing v1 + v2
+static inline ofVec2f ofVec2fAdd(ofVec2f v1, ofVec2f v2) {
+	ofVec2f r; 
 	r.x = v1.x + v2.x;
 	r.y = v1.y + v2.y;
 	return r;
 }
 
-// Return a Vector2f containing v1 - v2
-static inline Vector2f Vector2fSub(Vector2f v1, Vector2f v2) {
-	Vector2f r; 
+// Return a ofVec2f containing v1 - v2
+static inline ofVec2f ofVec2fSub(ofVec2f v1, ofVec2f v2) {
+	ofVec2f r; 
 	r.x = v1.x - v2.x;
 	r.y = v1.y - v2.y;
 	return r;
 }
 
 // Return the dot product of v1 and v2
-static inline GLfloat Vector2fDot(Vector2f v1, Vector2f v2) {
+static inline GLfloat ofVec2fDot(ofVec2f v1, ofVec2f v2) {
 	return (GLfloat) v1.x * v2.x + v1.y * v2.y;
 }
 
 // Return the length of the vector v
-static inline GLfloat Vector2fLength(Vector2f v) {
-	return (GLfloat) sqrtf(Vector2fDot(v, v));
+static inline GLfloat ofVec2fLength(ofVec2f v) {
+	return (GLfloat) sqrtf(ofVec2fDot(v, v));
 }
 
-// Return a Vector2f containing a normalized vector v
-static inline Vector2f Vector2fNormalize(Vector2f v) {
-	return Vector2fMultiply(v, 1.0f/Vector2fLength(v));
+// Return a ofVec2f containing a normalized vector v
+static inline ofVec2f ofVec2fNormalize(ofVec2f v) {
+	return ofVec2fMultiply(v, 1.0f/ofVec2fLength(v));
 }
 
 #define MAXIMUM_UPDATE_RATE 90.0f	// The maximum number of updates that occur per frame
@@ -176,15 +156,15 @@ public:
     void    changeTexture(string filename);
 
 	int				emitterType;
-	Vector2f		sourcePosition, sourcePositionVariance;			
+	ofVec2f		sourcePosition, sourcePositionVariance;			
 	GLfloat			angle, angleVariance;								
 	GLfloat			speed, speedVariance;	
 	GLfloat			radialAcceleration, tangentialAcceleration;
 	GLfloat			radialAccelVariance, tangentialAccelVariance;
-	Vector2f		gravity;	
+	ofVec2f		gravity;	
 	GLfloat			particleLifespan, particleLifespanVariance;			
-	Color4f			startColor, startColorVariance;						
-	Color4f			finishColor, finishColorVariance;
+	ofFloatColor			startColor, startColorVariance;						
+	ofFloatColor			finishColor, finishColorVariance;
 	GLfloat			startParticleSize, startParticleSizeVariance;
 	GLfloat			finishParticleSize, finishParticleSizeVariance;
 	GLint			maxParticles;

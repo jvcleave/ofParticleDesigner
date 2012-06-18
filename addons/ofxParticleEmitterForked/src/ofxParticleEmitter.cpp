@@ -42,10 +42,10 @@ ofxParticleEmitter::ofxParticleEmitter()
 	radialAccelVariance = tangentialAccelVariance = 0.0f;
 	gravity.x = gravity.y = 0.0f;
 	particleLifespan = particleLifespanVariance = 0.0f;			
-	startColor.red = startColor.green = startColor.blue = startColor.alpha = 1.0f;
-	startColorVariance.red = startColorVariance.green = startColorVariance.blue = startColorVariance.alpha = 1.0f;
-	finishColor.red = finishColor.green = finishColor.blue = finishColor.alpha = 1.0f;
-	finishColorVariance.red = finishColorVariance.green = finishColorVariance.blue = finishColorVariance.alpha = 1.0f;
+	startColor.r = startColor.g = startColor.b = startColor.a = 1.0f;
+	startColorVariance.r = startColorVariance.g = startColorVariance.b = startColorVariance.a = 1.0f;
+	finishColor.r = finishColor.g = finishColor.b = finishColor.a = 1.0f;
+	finishColorVariance.r = finishColorVariance.g = finishColorVariance.b = finishColorVariance.a = 1.0f;
 	startParticleSize = startParticleSizeVariance = 0.0f;
 	finishParticleSize = finishParticleSizeVariance = 0.0f;
 	maxParticles = 0.0f;
@@ -173,25 +173,25 @@ void ofxParticleEmitter::parseParticleConfig()
     radialAccelVariance			= settings->getAttribute( "radialAccelVariance", "value", radialAccelVariance );
 	tangentialAccelVariance		= settings->getAttribute( "tangentialAccelVariance", "value", tangentialAccelVariance );
 	
-	startColor.red				= settings->getAttribute( "startColor", "red", startColor.red );
-	startColor.green			= settings->getAttribute( "startColor", "green", startColor.green );
-	startColor.blue				= settings->getAttribute( "startColor", "blue", startColor.blue );
-	startColor.alpha			= settings->getAttribute( "startColor", "alpha", startColor.alpha );
+	startColor.r				= settings->getAttribute( "startColor", "red", startColor.r );
+	startColor.g			= settings->getAttribute( "startColor", "green", startColor.g );
+	startColor.b				= settings->getAttribute( "startColor", "blue", startColor.b );
+	startColor.a			= settings->getAttribute( "startColor", "alpha", startColor.a );
 	
-	startColorVariance.red		= settings->getAttribute( "startColorVariance", "red", startColorVariance.red );
-	startColorVariance.green	= settings->getAttribute( "startColorVariance", "green", startColorVariance.green );
-	startColorVariance.blue		= settings->getAttribute( "startColorVariance", "blue", startColorVariance.blue );
-	startColorVariance.alpha	= settings->getAttribute( "startColorVariance", "alpha", startColorVariance.alpha );
+	startColorVariance.r		= settings->getAttribute( "startColorVariance", "red", startColorVariance.r );
+	startColorVariance.g	= settings->getAttribute( "startColorVariance", "green", startColorVariance.g );
+	startColorVariance.b		= settings->getAttribute( "startColorVariance", "blue", startColorVariance.b );
+	startColorVariance.a	= settings->getAttribute( "startColorVariance", "alpha", startColorVariance.a );
 	
-	finishColor.red				= settings->getAttribute( "finishColor", "red", finishColor.red );
-	finishColor.green			= settings->getAttribute( "finishColor", "green", finishColor.green );
-	finishColor.blue			= settings->getAttribute( "finishColor", "blue", finishColor.blue );
-	finishColor.alpha			= settings->getAttribute( "finishColor", "alpha", finishColor.alpha );
+	finishColor.r				= settings->getAttribute( "finishColor", "red", finishColor.r );
+	finishColor.g			= settings->getAttribute( "finishColor", "green", finishColor.g );
+	finishColor.b			= settings->getAttribute( "finishColor", "blue", finishColor.b );
+	finishColor.a			= settings->getAttribute( "finishColor", "alpha", finishColor.a );
 	
-	finishColorVariance.red		= settings->getAttribute( "finishColorVariance", "red", finishColorVariance.red );
-	finishColorVariance.green	= settings->getAttribute( "finishColorVariance", "green", finishColorVariance.green );
-	finishColorVariance.blue	= settings->getAttribute( "finishColorVariance", "blue", finishColorVariance.blue );
-	finishColorVariance.alpha	= settings->getAttribute( "finishColorVariance", "alpha", finishColorVariance.alpha );
+	finishColorVariance.r		= settings->getAttribute( "finishColorVariance", "red", finishColorVariance.r );
+	finishColorVariance.g	= settings->getAttribute( "finishColorVariance", "green", finishColorVariance.g );
+	finishColorVariance.b	= settings->getAttribute( "finishColorVariance", "blue", finishColorVariance.b );
+	finishColorVariance.a	= settings->getAttribute( "finishColorVariance", "alpha", finishColorVariance.a );
 	
 	maxParticles				= settings->getAttribute( "maxParticles", "value", maxParticles );
 	startParticleSize			= settings->getAttribute( "startParticleSize", "value", startParticleSize );
@@ -265,15 +265,15 @@ void ofxParticleEmitter::initParticle( Particle* particle )
 	// angle variance.
 	float newAngle = (GLfloat)DEGREES_TO_RADIANS(angle + angleVariance * RANDOM_MINUS_1_TO_1());
 	
-	// Create a new Vector2f using the newAngle
-	Vector2f vector = Vector2fMake(cosf(newAngle), sinf(newAngle));
+	// Create a new ofVec2f using the newAngle
+	ofVec2f vector = ofVec2f(cosf(newAngle), sinf(newAngle));
 	
 	// Calculate the vectorSpeed using the speed and speedVariance which has been passed in
 	float vectorSpeed = speed + speedVariance * RANDOM_MINUS_1_TO_1();
 	
 	// The particles direction vector is calculated by taking the vector calculated above and
 	// multiplying that by the speed
-	particle->direction = Vector2fMultiply(vector, vectorSpeed);
+	particle->direction = ofVec2fMultiply(vector, vectorSpeed);
 	
 	// Set the default diameter of the particle from the source position
 	particle->radius = maxRadius + maxRadiusVariance * RANDOM_MINUS_1_TO_1();
@@ -295,19 +295,19 @@ void ofxParticleEmitter::initParticle( Particle* particle )
 	
 	// Calculate the color the particle should have when it starts its life.  All the elements
 	// of the start color passed in along with the variance are used to calculate the star color
-	Color4f start = {0, 0, 0, 0};
-	start.red = startColor.red + startColorVariance.red * RANDOM_MINUS_1_TO_1();
-	start.green = startColor.green + startColorVariance.green * RANDOM_MINUS_1_TO_1();
-	start.blue = startColor.blue + startColorVariance.blue * RANDOM_MINUS_1_TO_1();
-	start.alpha = startColor.alpha + startColorVariance.alpha * RANDOM_MINUS_1_TO_1();
+	ofFloatColor start(0.0f, 0.0f, 0.0f, 0.0f);
+	start.r = startColor.r + startColorVariance.r * RANDOM_MINUS_1_TO_1();
+	start.g = startColor.g + startColorVariance.g * RANDOM_MINUS_1_TO_1();
+	start.b = startColor.b + startColorVariance.b * RANDOM_MINUS_1_TO_1();
+	start.a = startColor.a + startColorVariance.a * RANDOM_MINUS_1_TO_1();
 	
 	// Calculate the color the particle should be when its life is over.  This is done the same
 	// way as the start color above
-	Color4f end = {0, 0, 0, 0};
-	end.red = finishColor.red + finishColorVariance.red * RANDOM_MINUS_1_TO_1();
-	end.green = finishColor.green + finishColorVariance.green * RANDOM_MINUS_1_TO_1();
-	end.blue = finishColor.blue + finishColorVariance.blue * RANDOM_MINUS_1_TO_1();
-	end.alpha = finishColor.alpha + finishColorVariance.alpha * RANDOM_MINUS_1_TO_1();
+	ofFloatColor end(0.0f, 0.0f, 0.0f, 0.0f);
+	end.r = finishColor.r + finishColorVariance.r * RANDOM_MINUS_1_TO_1();
+	end.g = finishColor.g + finishColorVariance.g * RANDOM_MINUS_1_TO_1();
+	end.b = finishColor.b + finishColorVariance.b * RANDOM_MINUS_1_TO_1();
+	end.a = finishColor.a + finishColorVariance.a * RANDOM_MINUS_1_TO_1();
 	
 	// Calculate the delta which is to be applied to the particles color during each cycle of its
 	// life.  The delta calculation uses the life span of the particle to make sure that the 
@@ -315,10 +315,10 @@ void ofxParticleEmitter::initParticle( Particle* particle )
 	// loop is using a fixed delta value we can calculate the delta color once saving cycles in the 
 	// update method
 	particle->color = start;
-	particle->deltaColor.red = ((end.red - start.red) / particle->timeToLive) * (1.0 / MAXIMUM_UPDATE_RATE);
-	particle->deltaColor.green = ((end.green - start.green) / particle->timeToLive)  * (1.0 / MAXIMUM_UPDATE_RATE);
-	particle->deltaColor.blue = ((end.blue - start.blue) / particle->timeToLive)  * (1.0 / MAXIMUM_UPDATE_RATE);
-	particle->deltaColor.alpha = ((end.alpha - start.alpha) / particle->timeToLive)  * (1.0 / MAXIMUM_UPDATE_RATE);
+	particle->deltaColor.r = ((end.r - start.r) / particle->timeToLive) * (1.0 / MAXIMUM_UPDATE_RATE);
+	particle->deltaColor.g = ((end.g - start.g) / particle->timeToLive)  * (1.0 / MAXIMUM_UPDATE_RATE);
+	particle->deltaColor.b = ((end.b - start.b) / particle->timeToLive)  * (1.0 / MAXIMUM_UPDATE_RATE);
+	particle->deltaColor.a = ((end.a - start.a) / particle->timeToLive)  * (1.0 / MAXIMUM_UPDATE_RATE);
 }
 
 void ofxParticleEmitter::stopParticleEmitter()
@@ -382,7 +382,7 @@ void ofxParticleEmitter::update()
 				currentParticle->angle += currentParticle->degreesPerSecond * aDelta;
 				currentParticle->radius -= currentParticle->radiusDelta;
                 
-				Vector2f tmp;
+				ofVec2f tmp;
 				tmp.x = sourcePosition.x - cosf(currentParticle->angle) * currentParticle->radius;
 				tmp.y = sourcePosition.y - sinf(currentParticle->angle) * currentParticle->radius;
 				currentParticle->position = tmp;
@@ -390,38 +390,38 @@ void ofxParticleEmitter::update()
 				if (currentParticle->radius < minRadius)
 					currentParticle->timeToLive = 0;
 			} else {
-				Vector2f tmp, radial, tangential;
+				ofVec2f tmp, radial, tangential;
                 
-                radial = Vector2fZero;
-                Vector2f diff = Vector2fSub(currentParticle->startPos, Vector2fZero);
+                radial = ofVec2fZero;
+                ofVec2f diff = ofVec2fSub(currentParticle->startPos, ofVec2fZero);
                 
-                currentParticle->position = Vector2fSub(currentParticle->position, diff);
+                currentParticle->position = ofVec2fSub(currentParticle->position, diff);
                 
                 if (currentParticle->position.x || currentParticle->position.y)
-                    radial = Vector2fNormalize(currentParticle->position);
+                    radial = ofVec2fNormalize(currentParticle->position);
                 
                 tangential.x = radial.x;
                 tangential.y = radial.y;
-                radial = Vector2fMultiply(radial, currentParticle->radialAcceleration);
+                radial = radial*currentParticle->radialAcceleration;
                 
                 GLfloat newy = tangential.x;
                 tangential.x = -tangential.y;
                 tangential.y = newy;
-                tangential = Vector2fMultiply(tangential, currentParticle->tangentialAcceleration);
+                tangential = tangential * currentParticle->tangentialAcceleration;
                 
-				tmp = Vector2fAdd( Vector2fAdd(radial, tangential), gravity);
-                tmp = Vector2fMultiply(tmp, aDelta);
-				currentParticle->direction = Vector2fAdd(currentParticle->direction, tmp);
-				tmp = Vector2fMultiply(currentParticle->direction, aDelta);
-				currentParticle->position = Vector2fAdd(currentParticle->position, tmp);
-                currentParticle->position = Vector2fAdd(currentParticle->position, diff);
+				tmp = (radial +tangential)+gravity;
+                tmp = tmp * aDelta;
+				currentParticle->direction = ofVec2fAdd(currentParticle->direction, tmp);
+				tmp = ofVec2fMultiply(currentParticle->direction, aDelta);
+				currentParticle->position = ofVec2fAdd(currentParticle->position, tmp);
+                currentParticle->position = ofVec2fAdd(currentParticle->position, diff);
 			}
 			
 			// Update the particles color
-			currentParticle->color.red += currentParticle->deltaColor.red;
-			currentParticle->color.green += currentParticle->deltaColor.green;
-			currentParticle->color.blue += currentParticle->deltaColor.blue;
-			currentParticle->color.alpha += currentParticle->deltaColor.alpha;
+			currentParticle->color.r += currentParticle->deltaColor.r;
+			currentParticle->color.g += currentParticle->deltaColor.g;
+			currentParticle->color.b += currentParticle->deltaColor.b;
+			currentParticle->color.a += currentParticle->deltaColor.a;
 			
 			// Place the position of the current particle into the vertices array
 			vertices[particleIndex].x = currentParticle->position.x;
@@ -484,8 +484,8 @@ void ofxParticleEmitter::drawTextures()
 	for( int i = 0; i < particleCount; i++ )
 	{
 		PointSprite* ps = &vertices[i];
-		ofSetColor( ps->color.red*255.0f, ps->color.green*255.0f, 
-				   ps->color.blue*255.0f, ps->color.alpha*255.0f );
+		ofSetColor( ps->color.r*255.0f, ps->color.g*255.0f, 
+				   ps->color.b*255.0f, ps->color.a*255.0f );
         //ofEnableAlphaBlending();
 		texture->draw( ps->x, ps->y, ps->size, ps->size );
         //ofDisableAlphaBlending();

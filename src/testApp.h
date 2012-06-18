@@ -47,15 +47,15 @@ private:
     ofxParticleEmitter m_emitter;
         
     int				emitterType;
-	Vector2f		sourcePosition, sourcePositionVariance;			
+	ofVec2f		sourcePosition, sourcePositionVariance;			
 	GLfloat			angle, angleVariance;								
 	GLfloat			speed, speedVariance;	
 	GLfloat			radialAcceleration, tangentialAcceleration;
 	GLfloat			radialAccelVariance, tangentialAccelVariance;
-	Vector2f		gravity;	
-	GLfloat			particleLifespan, particleLifespanVariance;			
-	Color4f			startColor, startColorVariance;						
-	Color4f			finishColor, finishColorVariance;
+	ofVec2f		gravity;	
+	GLfloat			particleLifespan, particleLifespanVariance;
+	ofFloatColor			startColor, startColorVariance;						
+	ofFloatColor			finishColor, finishColorVariance;
 	GLfloat			startParticleSize, startParticleSizeVariance;
 	GLfloat			finishParticleSize, finishParticleSizeVariance;
 	GLint			maxParticles;

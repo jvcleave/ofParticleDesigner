@@ -393,9 +393,9 @@ void ofxParticleEmitter::update()
 				ofVec2f tmp, radial, tangential;
                 
                 radial = ofVec2fZero;
-                ofVec2f diff = ofVec2fSub(currentParticle->startPos, ofVec2fZero);
+                ofVec2f diff = currentParticle->startPos-ofVec2fZero;
                 
-                currentParticle->position = ofVec2fSub(currentParticle->position, diff);
+                currentParticle->position = currentParticle->position-diff;
                 
                 if (currentParticle->position.x || currentParticle->position.y)
                     radial = ofVec2fNormalize(currentParticle->position);

@@ -33,7 +33,7 @@
     </ComboBox_Blend_Type_Src>
     <ComboBox_Blend_Type_Dest>
         <name>Blend Type Dest</name>
-        <value>6</value>
+        <value>1</value>
     </ComboBox_Blend_Type_Dest>
     <Button_Normal>
         <name>Normal</name>

@@ -90,18 +90,6 @@ typedef struct
 // Return a ofFloatColor structure populated with 1.0's
 static const ofFloatColor ofColorOnes(1.0f, 1.0f, 1.0f, 1.0f);
 
-// Return a zero populated ofVec2f
-static const ofVec2f ofVec2fZero(0.0f, 0.0f);
-
-
-// Return a ofVec2f containing v1 - v2
-/*static inline ofVec2f ofVec2fSub(ofVec2f v1, ofVec2f v2) {
-	ofVec2f r; 
-	r.x = v1.x - v2.x;
-	r.y = v1.y - v2.y;
-	return r;
-}*/
-
 
 
 // Return a ofVec2f containing a normalized vector v

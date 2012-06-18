@@ -392,13 +392,16 @@ void ofxParticleEmitter::update()
 			} else {
 				ofVec2f tmp, radial, tangential;
                 
-                radial = ofVec2fZero;
-                ofVec2f diff = currentParticle->startPos-ofVec2fZero;
+                radial = ofVec2f::zero();
+                //?? Not sure JVC
+				//ofVec2f diff = currentParticle->startPos-ofVec2fZero;
                 
+				ofVec2f diff = currentParticle->startPos;
                 currentParticle->position = currentParticle->position-diff;
                 
                 if (currentParticle->position.x || currentParticle->position.y)
                     radial = ofVec2fNormalize(currentParticle->position);
+					//radial = currentParticle->position.normalize()
                 
                 tangential.x = radial.x;
                 tangential.y = radial.y;

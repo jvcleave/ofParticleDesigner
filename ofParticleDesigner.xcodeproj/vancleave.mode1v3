@@ -275,7 +275,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>16</integer>
+									<integer>15</integer>
 									<integer>14</integer>
 									<integer>12</integer>
 									<integer>10</integer>
@@ -320,7 +320,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ofxParticleEmitter.h</string>
+								<string>ofxParticleEmitter.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,11 +328,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ofxParticleEmitter.h</string>
+										<string>ofxParticleEmitter.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>346845AE158FD1F8002441A1</string>
+										<string>346845D5158FDC7A002441A1</string>
 										<key>history</key>
 										<array>
 											<string>346844A2158FC047002441A1</string>
@@ -342,9 +342,9 @@
 											<string>34684572158FCEDD002441A1</string>
 											<string>3468459D158FD107002441A1</string>
 											<string>3468459E158FD107002441A1</string>
-											<string>3468459F158FD107002441A1</string>
 											<string>346845A0158FD107002441A1</string>
-											<string>346845A1158FD107002441A1</string>
+											<string>346845D3158FDC7A002441A1</string>
+											<string>346845D4158FDC7A002441A1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -542,14 +542,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>346845AF158FD1F8002441A1</string>
 		<string>346844DF158FC0C3002441A1</string>
 		<string>346844E0158FC0C3002441A1</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>/Volumes/EXTERNAL_JVC/OPENFRAMEWORKS/0071/apps/BUNBURY_APPS/ofParticleDesigner/ofParticleDesigner.xcodeproj</string>
 		<string>34684499158FC019002441A1</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>/Volumes/EXTERNAL_JVC/OPENFRAMEWORKS/0071/apps/BUNBURY_APPS/ofParticleDesigner/ofParticleDesigner.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 88 1680 940 0 0 1680 1028 </string>
@@ -582,14 +581,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {899, 434}}</string>
+								<string>{{0, 0}, {899, 566}}</string>
 								<key>RubberWindowFrame</key>
 								<string>467 180 899 716 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>434pt</string>
+							<string>566pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -606,14 +605,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 439}, {899, 236}}</string>
+								<string>{{0, 571}, {899, 104}}</string>
 								<key>RubberWindowFrame</key>
 								<string>467 180 899 716 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
 							<key>Proportion</key>
-							<string>236pt</string>
+							<string>104pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>

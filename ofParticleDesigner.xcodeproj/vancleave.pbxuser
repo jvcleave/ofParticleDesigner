@@ -1,0 +1,136 @@
+// !$*UTF8*$!
+{
+	031F0C8214B4181E00FAE8D2 /* ofxMSAInteractiveObject.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {855, 3315}}";
+			sepNavSelRange = "{4379, 0}";
+			sepNavVisRange = "{2210, 1711}";
+		};
+	};
+	031F0CF914B4197D00FAE8D2 /* ofxSimpleGuiToo.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {656, 5876}}";
+			sepNavSelRange = "{2534, 0}";
+			sepNavVisRange = "{2547, 194}";
+		};
+	};
+	34684472158FBFFB002441A1 /* ofParticleDesigner */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = ofParticleDesigner;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	346844A2158FC047002441A1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031F0C8214B4181E00FAE8D2 /* ofxMSAInteractiveObject.cpp */;
+		name = "ofxMSAInteractiveObject.cpp: 103";
+		rLen = 0;
+		rLoc = 4379;
+		rType = 0;
+		vrLen = 1711;
+		vrLoc = 2210;
+	};
+	346844A3158FC047002441A1 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Request for member 'keyPressed' in 'ofEvents', which is of non-class type 'ofCoreEvents& ()()'";
+		fRef = 031F0CF914B4197D00FAE8D2 /* ofxSimpleGuiToo.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 67;
+		rType = 1;
+	};
+	346844A4158FC047002441A1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031F0CF914B4197D00FAE8D2 /* ofxSimpleGuiToo.cpp */;
+		name = "ofxSimpleGuiToo.cpp: 68";
+		rLen = 0;
+		rLoc = 2622;
+		rType = 0;
+		vrLen = 1373;
+		vrLoc = 2105;
+	};
+	346844A8158FC047002441A1 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	346844A9158FC047002441A1 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	E4B69B4C0A3A1720003C02F2 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 34684472158FBFFB002441A1 /* ofParticleDesigner */;
+		activeTarget = E4B69B5A0A3A1756003C02F2 /* ofParticleDesigner */;
+		codeSenseManager = 346844A9158FC047002441A1 /* Code sense */;
+		executables = (
+			34684472158FBFFB002441A1 /* ofParticleDesigner */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					677,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 361742331;
+			PBXWorkspaceStateSaveDate = 361742331;
+		};
+		perUserProjectItems = {
+			346844A2158FC047002441A1 /* PBXTextBookmark */ = 346844A2158FC047002441A1 /* PBXTextBookmark */;
+			346844A3158FC047002441A1 /* XCBuildMessageTextBookmark */ = 346844A3158FC047002441A1 /* XCBuildMessageTextBookmark */;
+			346844A4158FC047002441A1 /* PBXTextBookmark */ = 346844A4158FC047002441A1 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 346844A8158FC047002441A1 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	E4B69B5A0A3A1756003C02F2 /* ofParticleDesigner */ = {
+		activeExec = 0;
+		executables = (
+			34684472158FBFFB002441A1 /* ofParticleDesigner */,
+		);
+	};
+}

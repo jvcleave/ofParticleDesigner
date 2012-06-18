@@ -103,13 +103,7 @@ static inline ofVec2f ofVec2fMultiply(ofVec2f v, GLfloat s) {
 	return r;
 }
 
-// Return a ofVec2f containing v1 + v2
-static inline ofVec2f ofVec2fAdd(ofVec2f v1, ofVec2f v2) {
-	ofVec2f r; 
-	r.x = v1.x + v2.x;
-	r.y = v1.y + v2.y;
-	return r;
-}
+
 
 // Return a ofVec2f containing v1 - v2
 static inline ofVec2f ofVec2fSub(ofVec2f v1, ofVec2f v2) {

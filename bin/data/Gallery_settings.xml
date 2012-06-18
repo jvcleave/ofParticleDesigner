@@ -5,6 +5,6 @@
     </ComboBox_TEXTURE_FILE>
     <ComboBox_SOURCE>
         <name>SOURCE</name>
-        <value>0</value>
+        <value>2</value>
     </ComboBox_SOURCE>
 </controls>

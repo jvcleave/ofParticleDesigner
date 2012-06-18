@@ -402,19 +402,19 @@ void ofxParticleEmitter::update()
                 
                 tangential.x = radial.x;
                 tangential.y = radial.y;
-                radial = radial*currentParticle->radialAcceleration;
+                radial = ofVec2fMultiply(radial, currentParticle->radialAcceleration);
                 
                 GLfloat newy = tangential.x;
                 tangential.x = -tangential.y;
                 tangential.y = newy;
-                tangential = tangential * currentParticle->tangentialAcceleration;
+                tangential = ofVec2fMultiply(tangential, currentParticle->tangentialAcceleration);
                 
-				tmp = (radial +tangential)+gravity;
-                tmp = tmp * aDelta;
-				currentParticle->direction = ofVec2fAdd(currentParticle->direction, tmp);
+				tmp = radial+tangential+gravity;
+                tmp = ofVec2fMultiply(tmp, aDelta);
+				currentParticle->direction = currentParticle->direction+tmp;
 				tmp = ofVec2fMultiply(currentParticle->direction, aDelta);
-				currentParticle->position = ofVec2fAdd(currentParticle->position, tmp);
-                currentParticle->position = ofVec2fAdd(currentParticle->position, diff);
+				currentParticle->position = currentParticle->position+tmp;
+                currentParticle->position = currentParticle->position+diff;
 			}
 			
 			// Update the particles color

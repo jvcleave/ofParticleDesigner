@@ -197,7 +197,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>3468461D1590EEBE002441A1</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>ofxParticleDesignerUI.cpp</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>3468461E1590EEBE002441A1</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>ofxParticleDesignerUI.cpp</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>3468461F1590EEBE002441A1</string>
+						<key>history</key>
+						<array>
+							<string>346845F91590ECD8002441A1</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1370, 898}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>1695 106 1370 939 1680 0 1680 1050 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -253,7 +294,7 @@
 						<dict>
 							<key>PBXSmartGroupTreeModuleColumnWidthsKey</key>
 							<array>
-								<real>252</real>
+								<real>326</real>
 							</array>
 							<key>PBXSmartGroupTreeModuleColumnsKey_v4</key>
 							<array>
@@ -267,6 +308,8 @@
 								<string>E4B69B4A0A3A1720003C02F2</string>
 								<string>E4B69E1C0A3A1BDC003C02F2</string>
 								<string>BB4B014C10F69532006C3DED</string>
+								<string>031F0CD714B4197D00FAE8D2</string>
+								<string>031F0CD914B4197D00FAE8D2</string>
 								<string>031F0C8514B4183200FAE8D2</string>
 								<string>031F0C8714B4183200FAE8D2</string>
 								<string>2A9BF3E714AF9A74004DADF5</string>
@@ -275,15 +318,15 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
-									<integer>14</integer>
-									<integer>12</integer>
+									<integer>31</integer>
+									<integer>28</integer>
+									<integer>26</integer>
 									<integer>10</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {252, 881}}</string>
+							<string>{{0, 0}, {326, 881}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -295,11 +338,11 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {269, 899}}</string>
+						<string>{{0, 0}, {343, 899}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
-							<real>252</real>
+							<real>326</real>
 						</array>
 						<key>RubberWindowFrame</key>
 						<string>0 88 1680 940 0 0 1680 1028 </string>
@@ -307,7 +350,7 @@
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
 					<key>Proportion</key>
-					<string>269pt</string>
+					<string>343pt</string>
 				</dict>
 				<dict>
 					<key>Dock</key>
@@ -320,7 +363,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ofxParticleEmitter.cpp</string>
+								<string>ofxParticleDesignerUI.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,11 +371,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ofxParticleEmitter.cpp</string>
+										<string>ofxParticleDesignerUI.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>346845D5158FDC7A002441A1</string>
+										<string>3468461C1590EEBE002441A1</string>
 										<key>history</key>
 										<array>
 											<string>346844A2158FC047002441A1</string>
@@ -340,11 +383,19 @@
 											<string>34684501158FC747002441A1</string>
 											<string>34684502158FC747002441A1</string>
 											<string>34684572158FCEDD002441A1</string>
-											<string>3468459D158FD107002441A1</string>
-											<string>3468459E158FD107002441A1</string>
 											<string>346845A0158FD107002441A1</string>
-											<string>346845D3158FDC7A002441A1</string>
-											<string>346845D4158FDC7A002441A1</string>
+											<string>346845DA1590E685002441A1</string>
+											<string>346845DC1590E685002441A1</string>
+											<string>346846111590EEBE002441A1</string>
+											<string>346846121590EEBE002441A1</string>
+											<string>346846131590EEBE002441A1</string>
+											<string>346846141590EEBE002441A1</string>
+											<string>346846151590EEBE002441A1</string>
+											<string>346846171590EEBE002441A1</string>
+											<string>346846181590EEBE002441A1</string>
+											<string>346846191590EEBE002441A1</string>
+											<string>3468461A1590EEBE002441A1</string>
+											<string>3468461B1590EEBE002441A1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -356,7 +407,7 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1406, 824}}</string>
+								<string>{{0, 0}, {1332, 824}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 88 1680 940 0 0 1680 1028 </string>
 							</dict>
@@ -376,7 +427,7 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 829}, {1406, 70}}</string>
+								<string>{{0, 829}, {1332, 70}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 88 1680 940 0 0 1680 1028 </string>
 							</dict>
@@ -387,7 +438,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1406pt</string>
+					<string>1332pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -542,13 +593,15 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>346846201590EEBE002441A1</string>
 		<string>346844DF158FC0C3002441A1</string>
 		<string>346844E0158FC0C3002441A1</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>34684499158FC019002441A1</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>3468461D1590EEBE002441A1</string>
+		<string>/Volumes/EXTERNAL_JVC/OPENFRAMEWORKS/0071/apps/BUNBURY_APPS/ofParticleDesigner/ofParticleDesigner.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Volumes/EXTERNAL_JVC/OPENFRAMEWORKS/0071/apps/BUNBURY_APPS/ofParticleDesigner/ofParticleDesigner.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 88 1680 940 0 0 1680 1028 </string>
@@ -567,14 +620,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ofxParticleEmitter.cpp</string>
+								<string>ofxParticleDesignerUI.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -591,6 +642,8 @@
 							<string>566pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -643,7 +696,7 @@
 			<key>WindowToolGUID</key>
 			<string>34684499158FC019002441A1</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

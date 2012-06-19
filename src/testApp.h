@@ -24,7 +24,7 @@
 
 #include "ofMain.h"
 #include "ofxXmlSettings.h"
-#include "ofxParticleEmitter.h"
+#include "ofxParticleDesignerUI.h"
 
 class testApp : public ofBaseApp{
 
@@ -42,52 +42,7 @@ public:
     void windowResized(int w, int h);
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
-	bool doUseMouse;
-    
+    ofxParticleDesignerUI ui;
 private:
-    ofxParticleEmitter m_emitter;
-        
-    int				emitterType;
-	ofVec2f		sourcePosition, sourcePositionVariance;			
-	GLfloat			angle, angleVariance;								
-	GLfloat			speed, speedVariance;	
-	GLfloat			radialAcceleration, tangentialAcceleration;
-	GLfloat			radialAccelVariance, tangentialAccelVariance;
-	ofVec2f		gravity;	
-	GLfloat			particleLifespan, particleLifespanVariance;
-	ofFloatColor			startColor, startColorVariance;						
-	ofFloatColor			finishColor, finishColorVariance;
-	GLfloat			startParticleSize, startParticleSizeVariance;
-	GLfloat			finishParticleSize, finishParticleSizeVariance;
-	GLint			maxParticles;
-	GLint			particleCount;
-	GLfloat			duration;
-	int				blendFuncSource, blendFuncDestination;
-    
-    GLfloat			maxRadius;						// Max radius at which particles are drawn when rotating
-	GLfloat			maxRadiusVariance;				// Variance of the maxRadius
-	GLfloat			radiusSpeed;					// The speed at which a particle moves from maxRadius to minRadius
-	GLfloat			minRadius;						// Radius from source below which a particle dies
-	GLfloat			rotatePerSecond;				// Number of degrees to rotate a particle around the source position per second
-	GLfloat			rotatePerSecondVariance;		// Variance in degrees for rotatePerSecond
-    
-    bool            doPlay, doSaveParticleXML, isNormal, isAddictive;
 
-    
-    int             blendSrc, blendDst;
-    
-    ofxXmlSettings  XML;
-    
-    void            setBlendType(int s, int &val);
-    int             getBlendType(int s);
-    void            saveToParticleXML();
-    void            loadFromParticleXML(string xmlname);
-	
-	int pexID;
-	int textureID;
-	int currentTextureID;
-	int currentPexID;
-	vector<string> pexFileNames;
-	vector<string> textureFileNames;
-	
 };

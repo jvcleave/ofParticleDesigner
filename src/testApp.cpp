@@ -1,3 +1,4 @@
+/*
 //
 // Copyright (c) 2012, Sound of Code, Lahiru Lakmal Priyadarshana
 //
@@ -19,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
-
+*/
 #include "testApp.h"
 
 #include "ofxSimpleGuiToo.h"
@@ -28,7 +29,9 @@
 void testApp::setup(){
 
     ofBackground(0, 0, 0);
+	ofSetVerticalSync(true);
 	ui.setup();
+	//ui.loadSample();
 }
 
 //--------------------------------------------------------------
@@ -50,24 +53,12 @@ void testApp::draw(){
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
     
-    /*if(key>='0' && key<='9') {
-		gui.setPage(key - '0');
-		gui.show();
-	} else {
-		switch(key) {
-			case ' ': gui.toggleDraw(); break;
-			case '[': gui.prevPage(); break;
-			case ']': gui.nextPage(); break;
-			case 'p': gui.nextPageWithBlank(); break;
-			case 'm': doUseMouse = !doUseMouse; break;
-			case 's' : doSaveParticleXML = true; break;
-		}
-	}*/
+    ui.onKeyPressed(key);
 }
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
-
+	
 }
 
 //--------------------------------------------------------------

@@ -2,38 +2,38 @@
     <ColorPicker_Start_Color>
         <name>Start Color</name>
         <values_0>1</values_0>
-        <values_1>1</values_1>
-        <values_2>1</values_2>
-        <values_3>1</values_3>
+        <values_1>0.31</values_1>
+        <values_2>0</values_2>
+        <values_3>0.62</values_3>
     </ColorPicker_Start_Color>
     <ColorPicker_Start_Color_Var>
         <name>Start Color Var</name>
-        <values_0>1</values_0>
-        <values_1>1</values_1>
-        <values_2>1</values_2>
-        <values_3>1</values_3>
+        <values_0>0</values_0>
+        <values_1>0</values_1>
+        <values_2>0</values_2>
+        <values_3>0</values_3>
     </ColorPicker_Start_Color_Var>
     <ColorPicker_End_Color>
         <name>End Color</name>
         <values_0>1</values_0>
-        <values_1>1</values_1>
-        <values_2>1</values_2>
-        <values_3>1</values_3>
+        <values_1>0.31</values_1>
+        <values_2>0</values_2>
+        <values_3>0</values_3>
     </ColorPicker_End_Color>
     <ColorPicker_End_Color_Var>
         <name>End Color Var</name>
-        <values_0>1</values_0>
-        <values_1>1</values_1>
-        <values_2>1</values_2>
-        <values_3>1</values_3>
+        <values_0>0</values_0>
+        <values_1>0</values_1>
+        <values_2>0</values_2>
+        <values_3>0</values_3>
     </ColorPicker_End_Color_Var>
     <ComboBox_Blend_Type_Src>
         <name>Blend Type Src</name>
-        <value>0</value>
+        <value>4</value>
     </ComboBox_Blend_Type_Src>
     <ComboBox_Blend_Type_Dest>
         <name>Blend Type Dest</name>
-        <value>0</value>
+        <value>6</value>
     </ComboBox_Blend_Type_Dest>
     <Button_Normal>
         <name>Normal</name>

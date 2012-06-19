@@ -22,9 +22,10 @@ public:
 	void loadSample();
 	void onMouseDragged(int x, int y);
 	void onMousePressed(int x, int y);
-	
+	void onKeyPressed(int key);
+	void createGUI();
 private:
-	ofxParticleEmitter m_emitter;
+	ofxParticleEmitter emitter;
 	
     int				emitterType;
 	ofVec2f		sourcePosition, sourcePositionVariance;			

@@ -48,70 +48,74 @@ void ofxParticleDesignerUI::setup()
 	}
 	
 
-    
+    loadSample();
+	createGUI();
 	
-    
-    //---------- SETTINGS ---------------
+}
+
+void ofxParticleDesignerUI::createGUI()
+{
+	//---------- SETTINGS ---------------
 	gui.addTitle("Particle Settings");
     
 	//gui.addToggle("Play", doPlay);
     gui.addToggle("Use Mouse", doUseMouse);
-    gui.addSlider("Source Pos X", m_emitter.sourcePosition.x, 0.0, ofGetWidth());
-    gui.addSlider("Source Pos X Var", m_emitter.sourcePositionVariance.x, 0.0, ofGetWidth());
-    gui.addSlider("Source Pos Y", m_emitter.sourcePosition.y, 0.0, ofGetHeight());
-    gui.addSlider("Source Pos Y Var", m_emitter.sourcePositionVariance.y, 0.0, ofGetHeight());
+    gui.addSlider("Source Pos X", emitter.sourcePosition.x, 0.0, ofGetWidth());
+    gui.addSlider("Source Pos X Var", emitter.sourcePositionVariance.x, 0.0, ofGetWidth());
+    gui.addSlider("Source Pos Y", emitter.sourcePosition.y, 0.0, ofGetHeight());
+    gui.addSlider("Source Pos Y Var", emitter.sourcePositionVariance.y, 0.0, ofGetHeight());
     
-    gui.addSlider("Angle", m_emitter.angle, 0.0, 360);
-    gui.addSlider("Angle Var", m_emitter.angleVariance, 0.0, 360);
+    gui.addSlider("Angle", emitter.angle, 0.0, 360);
+    gui.addSlider("Angle Var", emitter.angleVariance, 0.0, 360);
     
-    gui.addSlider("LifeSpan", m_emitter.particleLifespan, 0.000, 10.000);
-    gui.addSlider("LifeSpan Var", m_emitter.particleLifespanVariance, 0.000, 10.000);
+    gui.addSlider("LifeSpan", emitter.particleLifespan, 0.000, 10.000);
+    gui.addSlider("LifeSpan Var", emitter.particleLifespanVariance, 0.000, 10.000);
     
-    gui.addSlider("Start Size", m_emitter.startParticleSize, 0, 512);
-    gui.addSlider("Start Size Var", m_emitter.startParticleSizeVariance, 0, 512);
-    gui.addSlider("Finish Size", m_emitter.finishParticleSize, 0, 512);
-    gui.addSlider("Finish Size Var", m_emitter.finishParticleSizeVariance, 0, 512);
+    gui.addSlider("Start Size", emitter.startParticleSize, 0, 512);
+    gui.addSlider("Start Size Var", emitter.startParticleSizeVariance, 0, 512);
+    gui.addSlider("Finish Size", emitter.finishParticleSize, 0, 512);
+    gui.addSlider("Finish Size Var", emitter.finishParticleSizeVariance, 0, 512);
     
-    //gui.addSlider("Max Particles", m_emitter.maxParticles, 0, 1000);
-    //gui.addSlider("Particle Count", m_emitter.particleCount, 0, 1000);
+    //gui.addSlider("Max Particles", emitter.maxParticles, 0, 1000);
+    //gui.addSlider("Particle Count", emitter.particleCount, 0, 1000);
     
     //--------- TYPE --------------------
     gui.addTitle("Type");
     string titleArray[] = {"Gravity","Radial"};
-	gui.addComboBox("Emitter Type", m_emitter.emitterType, 2, titleArray);
+	gui.addComboBox("Emitter Type", emitter.emitterType, 2, titleArray);
     
     gui.addTitle("Gravity");
-    gui.addSlider("Speed", m_emitter.speed, 0.0, 1000);
-    gui.addSlider("Speed Var", m_emitter.speedVariance, 0.0, 1000);
+    gui.addSlider("Speed", emitter.speed, 0.0, 1000);
+    gui.addSlider("Speed Var", emitter.speedVariance, 0.0, 1000);
     
-    gui.addSlider("Radial Acc", m_emitter.radialAcceleration, -1000.000, 1000.000);
-    gui.addSlider("Radial Acc Var", m_emitter.radialAccelVariance, -1000.000, 1000.000);
+    gui.addSlider("Radial Acc", emitter.radialAcceleration, -1000.000, 1000.000);
+    gui.addSlider("Radial Acc Var", emitter.radialAccelVariance, -1000.000, 1000.000);
     
-    gui.addSlider("Tan Acc", m_emitter.tangentialAcceleration, -1000.000, 1000.000);
-    gui.addSlider("Tan Acc Var", m_emitter.tangentialAccelVariance, -1000.000, 1000.000);
+    gui.addSlider("Tan Acc", emitter.tangentialAcceleration, -1000.000, 1000.000);
+    gui.addSlider("Tan Acc Var", emitter.tangentialAccelVariance, -1000.000, 1000.000);
     
-    gui.addSlider("Gravity X", m_emitter.gravity.x, -3000, 3000);
-    gui.addSlider("Gravity Y", m_emitter.gravity.y, -3000, 3000);
+    gui.addSlider("Gravity X", emitter.gravity.x, -3000, 3000);
+    gui.addSlider("Gravity Y", emitter.gravity.y, -3000, 3000);
     
     gui.addTitle("Radial");
-    gui.addSlider("Max Radius", m_emitter.maxRadius, 0, 480);
-    gui.addSlider("Max Radius Var", m_emitter.maxRadiusVariance, 0, 480);
-    gui.addSlider("Min Radius", m_emitter.minRadius, 0, 480);
+    gui.addSlider("Max Radius", emitter.maxRadius, 0, 480);
+    gui.addSlider("Max Radius Var", emitter.maxRadiusVariance, 0, 480);
+    gui.addSlider("Min Radius", emitter.minRadius, 0, 480);
     
-    gui.addSlider("Deg. Per Sec", m_emitter.rotatePerSecond, 0.0, 360);
-    gui.addSlider("Deg. Per Sec Var", m_emitter.rotatePerSecondVariance, 0.0, 360);
+    gui.addSlider("Deg. Per Sec", emitter.rotatePerSecond, 0.0, 360);
+    gui.addSlider("Deg. Per Sec Var", emitter.rotatePerSecondVariance, 0.0, 360);
     
-    gui.addSlider("Radius Speed", m_emitter.radiusSpeed, 0, 1000);
+    gui.addSlider("Radius Speed", emitter.radiusSpeed, 0, 1000);
     
-	//gui.addSlider("Duration", m_emitter.duration, -1.0, 200);
+	//gui.addSlider("Duration", emitter.duration, -1.0, 200);
     
     //----------- COLOR ------------------
     gui.addPage("Color");
     gui.addTitle("Color");
-	gui.addColorPicker("Start Color", &(m_emitter.startColor).r);
-    gui.addColorPicker("Start Color Var", &(m_emitter.startColorVariance).r);
-    gui.addColorPicker("End Color", &(m_emitter.finishColor).r);
-    gui.addColorPicker("End Color Var", &(m_emitter.finishColorVariance).r);
+	gui.addColorPicker("Start Color", &(emitter.startColor).r);
+    gui.addColorPicker("Start Color Var", &(emitter.startColorVariance).r);
+    gui.addColorPicker("End Color", &(emitter.finishColor).r);
+    gui.addColorPicker("End Color Var", &(emitter.finishColorVariance).r);
     
     gui.addTitle("Blend Mode");
     string glTitleArray[] = {"GL_ZERO", "GL_ONE", "GL_DST_COLOR", "GL_ONE_MINUS_DST_COLOR", "GL_SRC_ALPHA", "GL_ONE_MINUS_SRC_ALPHA", "GL_DST_ALPHA",
@@ -134,23 +138,24 @@ void ofxParticleDesignerUI::setup()
     gui.addComboBox("SOURCE", pexID, pexFileNames.size(),  &pexFileNames[0]);
     gui.setPage(1);
     gui.show();
-    
-    //m_emitter.sourcePosition.x = ofGetWidth()/2;
-    //m_emitter.sourcePosition.y = ofGetHeight()/2;
-    
-    blendSrc = getBlendType(m_emitter.blendFuncSource);
-    blendDst = getBlendType(m_emitter.blendFuncDestination);
 	
+    
+    blendSrc = getBlendType(emitter.blendFuncSource);
+    blendDst = getBlendType(emitter.blendFuncDestination);
 }
+
 
 void ofxParticleDesignerUI::loadSample()
 {
 		loadFromParticleXML( "circles.pex" );
+	
+		//emitter.sourcePosition.x = ofGetWidth()/2;
+		//emitter.sourcePosition.y = ofGetHeight()/2;
 }
 
 void ofxParticleDesignerUI::update()
 {
-	m_emitter.update();
+	emitter.update();
     
 	if( isNormal )
 	{
@@ -178,17 +183,22 @@ void ofxParticleDesignerUI::update()
 	if ( currentTextureID!= textureID)
 	{
 		currentTextureID = textureID;
-		m_emitter.changeTexture(textureFileNames[currentTextureID]);
+		emitter.changeTexture(textureFileNames[currentTextureID]);
 	}
 	
-    setBlendType(blendSrc, m_emitter.blendFuncSource);
-    setBlendType(blendDst, m_emitter.blendFuncDestination);
+    setBlendType(blendSrc, emitter.blendFuncSource);
+    setBlendType(blendDst, emitter.blendFuncDestination);
 	
 }
 
 void ofxParticleDesignerUI::draw()
 {
-	m_emitter.draw();
+	ofPushMatrix();
+		ofPushStyle();
+			emitter.draw();
+			gui.draw();
+		ofPopStyle();
+	ofPopMatrix();
 }
 
 void ofxParticleDesignerUI::saveToParticleXML() {
@@ -226,177 +236,177 @@ void ofxParticleDesignerUI::saveToParticleXML() {
 	XML.pushTag("particleEmitterConfig");
 	
     XML.addTag("texture");
-    XML.addAttribute("texture", "name", m_emitter.getTextureName(), 0);
+    XML.addAttribute("texture", "name", emitter.getTextureName(), 0);
     XML.pushTag("texture");
     XML.popTag();
     
     XML.addTag("sourcePosition");
-    XML.addAttribute("sourcePosition", "x", m_emitter.sourcePosition.x, 0);
-    XML.addAttribute("sourcePosition", "y", m_emitter.sourcePosition.y, 0);
+    XML.addAttribute("sourcePosition", "x", emitter.sourcePosition.x, 0);
+    XML.addAttribute("sourcePosition", "y", emitter.sourcePosition.y, 0);
     XML.pushTag("sourcePosition");
     XML.popTag();
     
     XML.addTag("sourcePositionVariance");
-    XML.addAttribute("sourcePositionVariance", "x", m_emitter.sourcePositionVariance.x, 0);
-    XML.addAttribute("sourcePositionVariance", "y", m_emitter.sourcePositionVariance.y, 0);
+    XML.addAttribute("sourcePositionVariance", "x", emitter.sourcePositionVariance.x, 0);
+    XML.addAttribute("sourcePositionVariance", "y", emitter.sourcePositionVariance.y, 0);
     XML.pushTag("sourcePositionVariance");
     XML.popTag();
     
     XML.addTag("speed");
-    XML.addAttribute("speed", "value", m_emitter.speed, 0);
+    XML.addAttribute("speed", "value", emitter.speed, 0);
     XML.pushTag("speed");
     XML.popTag();
     
     XML.addTag("speedVariance");
-    XML.addAttribute("speedVariance", "value", m_emitter.speedVariance, 0);
+    XML.addAttribute("speedVariance", "value", emitter.speedVariance, 0);
     XML.pushTag("speedVariance");
     XML.popTag();
     
     XML.addTag("angle");
-    XML.addAttribute("angle", "value", m_emitter.angle, 0);
+    XML.addAttribute("angle", "value", emitter.angle, 0);
     XML.pushTag("angle");
     XML.popTag();
     
     XML.addTag("angleVariance");
-    XML.addAttribute("angleVariance", "value", m_emitter.angleVariance, 0);
+    XML.addAttribute("angleVariance", "value", emitter.angleVariance, 0);
     XML.pushTag("angleVariance");
     XML.popTag();
     
     XML.addTag("particleLifeSpan");
-    XML.addAttribute("particleLifeSpan", "value", m_emitter.particleLifespan, 0);
+    XML.addAttribute("particleLifeSpan", "value", emitter.particleLifespan, 0);
     XML.pushTag("particleLifeSpan");
     XML.popTag();
     
     XML.addTag("particleLifespanVariance");
-    XML.addAttribute("particleLifespanVariance", "value", m_emitter.particleLifespanVariance, 0);
+    XML.addAttribute("particleLifespanVariance", "value", emitter.particleLifespanVariance, 0);
     XML.pushTag("particleLifespanVariance");
     XML.popTag();
     
     XML.addTag("gravity");
-    XML.addAttribute("gravity", "x", m_emitter.gravity.x, 0);
-    XML.addAttribute("gravity", "y", m_emitter.gravity.y, 0);
+    XML.addAttribute("gravity", "x", emitter.gravity.x, 0);
+    XML.addAttribute("gravity", "y", emitter.gravity.y, 0);
     XML.pushTag("gravity");
     XML.popTag();
     
     XML.addTag("radialAcceleration");
-    XML.addAttribute("radialAcceleration", "value", m_emitter.radialAcceleration, 0);
+    XML.addAttribute("radialAcceleration", "value", emitter.radialAcceleration, 0);
     XML.pushTag("radialAcceleration");
     XML.popTag();
     
     XML.addTag("tangentialAcceleration");
-    XML.addAttribute("tangentialAcceleration", "value", m_emitter.tangentialAcceleration, 0);
+    XML.addAttribute("tangentialAcceleration", "value", emitter.tangentialAcceleration, 0);
     XML.pushTag("tangentialAcceleration");
     XML.popTag();
     
     XML.addTag("radialAccelVariance");
-    XML.addAttribute("radialAccelVariance", "value", m_emitter.radialAccelVariance, 0);
+    XML.addAttribute("radialAccelVariance", "value", emitter.radialAccelVariance, 0);
     XML.pushTag("radialAccelVariance");
     XML.popTag();
     
     XML.addTag("tangentialAccelVariance");
-    XML.addAttribute("tangentialAccelVariance", "value", m_emitter.tangentialAccelVariance, 0);
+    XML.addAttribute("tangentialAccelVariance", "value", emitter.tangentialAccelVariance, 0);
     XML.pushTag("tangentialAccelVariance");
     XML.popTag();
     
     XML.addTag("startColor");
-    XML.addAttribute("startColor", "red", m_emitter.startColor.r, 0);
-    XML.addAttribute("startColor", "green", m_emitter.startColor.g, 0);
-    XML.addAttribute("startColor", "blue", m_emitter.startColor.b, 0);
-    XML.addAttribute("startColor", "alpha", m_emitter.startColor.a, 0);
+    XML.addAttribute("startColor", "red", emitter.startColor.r, 0);
+    XML.addAttribute("startColor", "green", emitter.startColor.g, 0);
+    XML.addAttribute("startColor", "blue", emitter.startColor.b, 0);
+    XML.addAttribute("startColor", "alpha", emitter.startColor.a, 0);
     XML.pushTag("startColor");
     XML.popTag();
     
     XML.addTag("startColorVariance");
-    XML.addAttribute("startColorVariance", "red", m_emitter.startColorVariance.r, 0);
-    XML.addAttribute("startColorVariance", "green", m_emitter.startColorVariance.g, 0);
-    XML.addAttribute("startColorVariance", "blue", m_emitter.startColorVariance.b, 0);
-    XML.addAttribute("startColorVariance", "alpha", m_emitter.startColorVariance.a, 0);
+    XML.addAttribute("startColorVariance", "red", emitter.startColorVariance.r, 0);
+    XML.addAttribute("startColorVariance", "green", emitter.startColorVariance.g, 0);
+    XML.addAttribute("startColorVariance", "blue", emitter.startColorVariance.b, 0);
+    XML.addAttribute("startColorVariance", "alpha", emitter.startColorVariance.a, 0);
     XML.pushTag("startColorVariance");
     XML.popTag();
     
     XML.addTag("finishColor");
-    XML.addAttribute("finishColor", "red", m_emitter.finishColor.r, 0);
-    XML.addAttribute("finishColor", "green", m_emitter.finishColor.g, 0);
-    XML.addAttribute("finishColor", "blue", m_emitter.finishColor.b, 0);
-    XML.addAttribute("finishColor", "alpha", m_emitter.finishColor.a, 0);
+    XML.addAttribute("finishColor", "red", emitter.finishColor.r, 0);
+    XML.addAttribute("finishColor", "green", emitter.finishColor.g, 0);
+    XML.addAttribute("finishColor", "blue", emitter.finishColor.b, 0);
+    XML.addAttribute("finishColor", "alpha", emitter.finishColor.a, 0);
     XML.pushTag("finishColor");
     XML.popTag();
     
     XML.addTag("finishColorVariance");
-    XML.addAttribute("finishColorVariance", "red", m_emitter.finishColorVariance.r, 0);
-    XML.addAttribute("finishColorVariance", "green", m_emitter.finishColorVariance.g, 0);
-    XML.addAttribute("finishColorVariance", "blue", m_emitter.finishColorVariance.b, 0);
-    XML.addAttribute("finishColorVariance", "alpha", m_emitter.finishColorVariance.a, 0);
+    XML.addAttribute("finishColorVariance", "red", emitter.finishColorVariance.r, 0);
+    XML.addAttribute("finishColorVariance", "green", emitter.finishColorVariance.g, 0);
+    XML.addAttribute("finishColorVariance", "blue", emitter.finishColorVariance.b, 0);
+    XML.addAttribute("finishColorVariance", "alpha", emitter.finishColorVariance.a, 0);
     XML.pushTag("finishColorVariance");
     XML.popTag();
     
     XML.addTag("maxParticles");
-    XML.addAttribute("maxParticles", "value", m_emitter.maxParticles, 0);
+    XML.addAttribute("maxParticles", "value", emitter.maxParticles, 0);
     XML.pushTag("maxParticles");
     XML.popTag();
     
     XML.addTag("startParticleSize");
-    XML.addAttribute("startParticleSize", "value", m_emitter.startParticleSize, 0);
+    XML.addAttribute("startParticleSize", "value", emitter.startParticleSize, 0);
     XML.pushTag("startParticleSize");
     XML.popTag();
     
     XML.addTag("startParticleSizeVariance");
-    XML.addAttribute("startParticleSizeVariance", "value", m_emitter.startParticleSizeVariance, 0);
+    XML.addAttribute("startParticleSizeVariance", "value", emitter.startParticleSizeVariance, 0);
     XML.pushTag("startParticleSizeVariance");
     XML.popTag();
     
     XML.addTag("finishParticleSize");
-    XML.addAttribute("finishParticleSize", "value", m_emitter.finishParticleSize, 0);
+    XML.addAttribute("finishParticleSize", "value", emitter.finishParticleSize, 0);
     XML.pushTag("finishParticleSize");
     XML.popTag();
     
     XML.addTag("finishParticleSizeVariance");
-    XML.addAttribute("finishParticleSizeVariance", "value", m_emitter.finishParticleSizeVariance, 0);
+    XML.addAttribute("finishParticleSizeVariance", "value", emitter.finishParticleSizeVariance, 0);
     XML.pushTag("finishParticleSizeVariance");
     XML.popTag();
     
     XML.addTag("duration");
-    XML.addAttribute("duration", "value", m_emitter.duration, 0);
+    XML.addAttribute("duration", "value", emitter.duration, 0);
     XML.pushTag("duration");
     XML.popTag();
     
     XML.addTag("emitterType");
-    XML.addAttribute("emitterType", "value", m_emitter.emitterType, 0);
+    XML.addAttribute("emitterType", "value", emitter.emitterType, 0);
     XML.pushTag("emitterType");
     XML.popTag();
     
     XML.addTag("maxRadius");
-    XML.addAttribute("maxRadius", "value", m_emitter.maxRadius, 0);
+    XML.addAttribute("maxRadius", "value", emitter.maxRadius, 0);
     XML.pushTag("maxRadius");
     XML.popTag();
     
     XML.addTag("maxRadiusVariance");
-    XML.addAttribute("maxRadiusVariance", "value", m_emitter.maxRadiusVariance, 0);
+    XML.addAttribute("maxRadiusVariance", "value", emitter.maxRadiusVariance, 0);
     XML.pushTag("maxRadiusVariance");
     XML.popTag();
     
     XML.addTag("minRadius");
-    XML.addAttribute("minRadius", "value", m_emitter.minRadius, 0);
+    XML.addAttribute("minRadius", "value", emitter.minRadius, 0);
     XML.pushTag("minRadius");
     XML.popTag();
     
     XML.addTag("rotatePerSecond");
-    XML.addAttribute("rotatePerSecond", "value", m_emitter.rotatePerSecond, 0);
+    XML.addAttribute("rotatePerSecond", "value", emitter.rotatePerSecond, 0);
     XML.pushTag("rotatePerSecond");
     XML.popTag();
     
     XML.addTag("rotatePerSecondVariance");
-    XML.addAttribute("rotatePerSecondVariance", "value", m_emitter.rotatePerSecondVariance, 0);
+    XML.addAttribute("rotatePerSecondVariance", "value", emitter.rotatePerSecondVariance, 0);
     XML.pushTag("rotatePerSecondVariance");
     XML.popTag();
     
     XML.addTag("blendFuncSource");
-    XML.addAttribute("blendFuncSource", "value", m_emitter.blendFuncSource, 0);
+    XML.addAttribute("blendFuncSource", "value", emitter.blendFuncSource, 0);
     XML.pushTag("blendFuncSource");
     XML.popTag();
     
     XML.addTag("blendFuncDestination");
-    XML.addAttribute("blendFuncDestination", "value", m_emitter.blendFuncDestination, 0);
+    XML.addAttribute("blendFuncDestination", "value", emitter.blendFuncDestination, 0);
     XML.pushTag("blendFuncDestination");
     XML.popTag();
 	
@@ -410,23 +420,23 @@ void ofxParticleDesignerUI::saveToParticleXML() {
 void ofxParticleDesignerUI::loadFromParticleXML(string xmlname) {
     
 	
-    if ( !m_emitter.loadFromXml( xmlname, sampleDirectory ) )
+    if ( !emitter.loadFromXml( xmlname, sampleDirectory ) )
 	{
 		ofLog( OF_LOG_ERROR, "ofxParticleDesignerUI::setup() - failed to load emitter config" );
 	}
     
-    m_emitter.sourcePosition.x = ofGetWidth()/2;
-    m_emitter.sourcePosition.y = ofGetHeight()/2;
+    emitter.sourcePosition.x = ofGetWidth()/2;
+    emitter.sourcePosition.y = ofGetHeight()/2;
     
-    m_emitter.gravity.y = m_emitter.gravity.y * -1; //FIX for y axis
+    emitter.gravity.y = emitter.gravity.y * -1; //FIX for y axis
 }
 
 void ofxParticleDesignerUI::onMousePressed(int x, int y)
 {
 	if (doUseMouse && !gui.isOn()) 
 	{
-		m_emitter.sourcePosition.x = x;
-		m_emitter.sourcePosition.y = y;
+		emitter.sourcePosition.x = x;
+		emitter.sourcePosition.y = y;
 	}
 }
 
@@ -434,11 +444,32 @@ void ofxParticleDesignerUI::onMouseDragged(int x, int y)
 {
 	if (doUseMouse && !gui.isOn()) 
 	{
-		m_emitter.sourcePosition.x = x;
-		m_emitter.sourcePosition.y = y;
+		emitter.sourcePosition.x = x;
+		emitter.sourcePosition.y = y;
 	}
 }
 
+void ofxParticleDesignerUI::onKeyPressed(int key)
+{
+    
+    if(key>='0' && key<='9') 
+	{
+		gui.setPage(key - '0');
+		gui.show();
+	} else 
+	{
+		 switch(key)
+			{
+				case ' ' :	gui.toggleDraw();			break;
+				case '[' :	gui.prevPage();				break;
+				case ']' :	gui.nextPage();				break;
+				case 'p' :	gui.nextPageWithBlank();	break;
+				case 'm' :	doUseMouse = !doUseMouse;	break;
+				case 's' :	doSaveParticleXML = true;	break;
+			 }
+	}
+	 
+}
 void ofxParticleDesignerUI::setBlendType(int s, int &val) {
     
     //GL BLEND TYPE

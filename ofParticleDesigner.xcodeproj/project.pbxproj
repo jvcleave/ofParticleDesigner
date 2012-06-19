@@ -121,7 +121,6 @@
 		031F0CFC14B4197D00FAE8D2 /* ofxSimpleGuiValueControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSimpleGuiValueControl.h; sourceTree = "<group>"; };
 		2A7650CD14B25AB100997D2D /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		2A7650CE14B25C6000997D2D /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
-		2A9BF3E814AF9A74004DADF5 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		2A9BF3EA14AF9A74004DADF5 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
 		2A9BF3EB14AF9A74004DADF5 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
 		2A9BF3EC14AF9A74004DADF5 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
@@ -279,7 +278,6 @@
 		2A9BF3E714AF9A74004DADF5 /* ofxXmlSettings */ = {
 			isa = PBXGroup;
 			children = (
-				2A9BF3E814AF9A74004DADF5 /* install.xml */,
 				2A9BF3E914AF9A74004DADF5 /* libs */,
 				2A9BF3EE14AF9A74004DADF5 /* src */,
 			);

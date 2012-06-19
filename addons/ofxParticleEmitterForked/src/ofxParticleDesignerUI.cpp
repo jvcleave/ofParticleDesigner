@@ -85,27 +85,27 @@ void ofxParticleDesignerUI::createGUI()
 	gui.addComboBox("Emitter Type", emitter.emitterType, 2, titleArray);
     
     gui.addTitle("Gravity");
-    gui.addSlider("Speed", emitter.speed, 0.0, 1000);
-    gui.addSlider("Speed Var", emitter.speedVariance, 0.0, 1000);
+    gravityControls.push_back(&gui.addSlider("Speed", emitter.speed, 0.0, 1000));
+	gravityControls.push_back(&gui.addSlider("Speed Var", emitter.speedVariance, 0.0, 1000));
     
-    gui.addSlider("Radial Acc", emitter.radialAcceleration, -1000.000, 1000.000);
-    gui.addSlider("Radial Acc Var", emitter.radialAccelVariance, -1000.000, 1000.000);
+	gravityControls.push_back(&gui.addSlider("Radial Acc", emitter.radialAcceleration, -1000.000, 1000.000));
+    gravityControls.push_back(&gui.addSlider("Radial Acc Var", emitter.radialAccelVariance, -1000.000, 1000.000));
     
-    gui.addSlider("Tan Acc", emitter.tangentialAcceleration, -1000.000, 1000.000);
-    gui.addSlider("Tan Acc Var", emitter.tangentialAccelVariance, -1000.000, 1000.000);
-    
-    gui.addSlider("Gravity X", emitter.gravity.x, -3000, 3000);
-    gui.addSlider("Gravity Y", emitter.gravity.y, -3000, 3000);
-    
+    gravityControls.push_back(&gui.addSlider("Tan Acc", emitter.tangentialAcceleration, -1000.000, 1000.000));
+    gravityControls.push_back(&gui.addSlider("Tan Acc Var", emitter.tangentialAccelVariance, -1000.000, 1000.000));
+  
+    gravityControls.push_back(&gui.addSlider("Gravity X", emitter.gravity.x, -3000, 3000));
+    gravityControls.push_back(&gui.addSlider("Gravity Y", emitter.gravity.y, -3000, 3000));
+
     gui.addTitle("Radial");
-    gui.addSlider("Max Radius", emitter.maxRadius, 0, 480);
-    gui.addSlider("Max Radius Var", emitter.maxRadiusVariance, 0, 480);
-    gui.addSlider("Min Radius", emitter.minRadius, 0, 480);
+    radialControls.push_back(&gui.addSlider("Max Radius", emitter.maxRadius, 0, 480));
+    radialControls.push_back(&gui.addSlider("Max Radius Var", emitter.maxRadiusVariance, 0, 480));
+    radialControls.push_back(&gui.addSlider("Min Radius", emitter.minRadius, 0, 480));
     
-    gui.addSlider("Deg. Per Sec", emitter.rotatePerSecond, 0.0, 360);
-    gui.addSlider("Deg. Per Sec Var", emitter.rotatePerSecondVariance, 0.0, 360);
+    radialControls.push_back(&gui.addSlider("Deg. Per Sec", emitter.rotatePerSecond, 0.0, 360));
+    radialControls.push_back(&gui.addSlider("Deg. Per Sec Var", emitter.rotatePerSecondVariance, 0.0, 360));
     
-    gui.addSlider("Radius Speed", emitter.radiusSpeed, 0, 1000);
+    radialControls.push_back(&gui.addSlider("Radius Speed", emitter.radiusSpeed, 0, 1000));
     
 	//gui.addSlider("Duration", emitter.duration, -1.0, 200);
     
@@ -148,7 +148,7 @@ void ofxParticleDesignerUI::createGUI()
 void ofxParticleDesignerUI::loadSample()
 {
 		loadFromParticleXML( "circles.pex" );
-	
+		cout << "emitter.emitterType: " << emitter.emitterType << endl;
 		//emitter.sourcePosition.x = ofGetWidth()/2;
 		//emitter.sourcePosition.y = ofGetHeight()/2;
 }
@@ -156,7 +156,13 @@ void ofxParticleDesignerUI::loadSample()
 void ofxParticleDesignerUI::update()
 {
 	emitter.update();
-    
+    if (emitter.emitterType == EMITTER_TYPE_GRAVITY) 
+	{
+		toggleControls(radialControls, gravityControls);
+	}else {
+		toggleControls(gravityControls, radialControls);
+	}
+
 	if( isNormal )
 	{
         //ofSetWindowTitle("Normal");
@@ -567,4 +573,14 @@ int ofxParticleDesignerUI::getBlendType(int s) {
     }
     
     return val;
+}
+
+void ofxParticleDesignerUI::toggleControls(vector<ofxSimpleGuiControl*> controlsToHide, vector<ofxSimpleGuiControl*> controlsToShow)
+{
+	for (int i=0; i<controlsToHide.size(); i++) {
+		controlsToHide[i]->isHidden = true;
+	}
+	for (int i=0; i<controlsToShow.size(); i++) {
+		controlsToShow[i]->isHidden = false;
+	}
 }

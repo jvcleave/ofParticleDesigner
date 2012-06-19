@@ -120,20 +120,22 @@ public:
     void    changeTexture(string filename);
 
 	int				emitterType;
-	ofVec2f		sourcePosition, sourcePositionVariance;			
+	ofVec2f			sourcePosition, sourcePositionVariance;			
 	GLfloat			angle, angleVariance;								
 	GLfloat			speed, speedVariance;	
 	GLfloat			radialAcceleration, tangentialAcceleration;
 	GLfloat			radialAccelVariance, tangentialAccelVariance;
-	ofVec2f		gravity;	
+	ofVec2f			gravity;	
 	GLfloat			particleLifespan, particleLifespanVariance;			
-	ofFloatColor			startColor, startColorVariance;						
-	ofFloatColor			finishColor, finishColorVariance;
+	ofFloatColor	startColor, startColorVariance;						
+	ofFloatColor	finishColor, finishColorVariance;
 	GLfloat			startParticleSize, startParticleSizeVariance;
 	GLfloat			finishParticleSize, finishParticleSizeVariance;
 	GLint			maxParticles;
 	GLint			particleCount;
 	GLfloat			duration;
+	GLfloat rotationStart, rotationStartVariance;
+    GLfloat rotationEnd, rotationEndVariance;
 	int				blendFuncSource, blendFuncDestination;
 
 	// Particle ivars only used when a maxRadius value is provided.  These values are used for

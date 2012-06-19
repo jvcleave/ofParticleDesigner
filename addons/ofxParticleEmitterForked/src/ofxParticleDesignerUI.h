@@ -10,7 +10,10 @@
 #include "ofMain.h"
 #include "ofxParticleEmitter.h"
 #include "ofxSimpleGuiToo.h"
-
+enum EmitterType {
+	EMITTER_TYPE_GRAVITY = 0,
+	EMITTER_TYPE_RADIAL = 1
+};
 class ofxParticleDesignerUI
 {
 	
@@ -27,21 +30,23 @@ public:
 private:
 	ofxParticleEmitter emitter;
 	
-    int				emitterType;
-	ofVec2f		sourcePosition, sourcePositionVariance;			
+    EmitterType				emitterType;
+	ofVec2f			sourcePosition, sourcePositionVariance;			
 	GLfloat			angle, angleVariance;								
 	GLfloat			speed, speedVariance;	
 	GLfloat			radialAcceleration, tangentialAcceleration;
 	GLfloat			radialAccelVariance, tangentialAccelVariance;
-	ofVec2f		gravity;	
+	ofVec2f			gravity;	
 	GLfloat			particleLifespan, particleLifespanVariance;
-	ofFloatColor			startColor, startColorVariance;						
-	ofFloatColor			finishColor, finishColorVariance;
+	ofFloatColor	startColor, startColorVariance;						
+	ofFloatColor	finishColor, finishColorVariance;
 	GLfloat			startParticleSize, startParticleSizeVariance;
 	GLfloat			finishParticleSize, finishParticleSizeVariance;
 	GLint			maxParticles;
 	GLint			particleCount;
 	GLfloat			duration;
+	GLfloat rotationStart, rotationStartVariance;
+    GLfloat rotationEnd, rotationEndVariance;
 	int				blendFuncSource, blendFuncDestination;
     
     GLfloat			maxRadius;						// Max radius at which particles are drawn when rotating
@@ -73,4 +78,8 @@ private:
 	ofDirectory sampleDirectory;
 	
 	ofxSimpleGuiToo gui;
+	vector<ofxSimpleGuiControl*> gravityControls;
+	vector<ofxSimpleGuiControl*> radialControls;
+	void toggleControls(vector<ofxSimpleGuiControl*> controlsToHide, vector<ofxSimpleGuiControl*> controlsToShow);
+
 };

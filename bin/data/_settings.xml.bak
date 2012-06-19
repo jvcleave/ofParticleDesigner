@@ -1,7 +1,7 @@
 <controls>
     <Toggle_Use_Mouse>
         <name>Use Mouse</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_Use_Mouse>
     <SliderFloat_Source_Pos_X>
         <name>Source Pos X</name>
@@ -9,7 +9,7 @@
     </SliderFloat_Source_Pos_X>
     <SliderFloat_Source_Pos_X_Var>
         <name>Source Pos X Var</name>
-        <value>160</value>
+        <value>60</value>
     </SliderFloat_Source_Pos_X_Var>
     <SliderFloat_Source_Pos_Y>
         <name>Source Pos Y</name>
@@ -21,31 +21,31 @@
     </SliderFloat_Source_Pos_Y_Var>
     <SliderFloat_Angle>
         <name>Angle</name>
-        <value>270.37</value>
+        <value>224.38</value>
     </SliderFloat_Angle>
     <SliderFloat_Angle_Var>
         <name>Angle Var</name>
-        <value>15</value>
+        <value>360</value>
     </SliderFloat_Angle_Var>
     <SliderFloat_LifeSpan>
         <name>LifeSpan</name>
-        <value>1.5</value>
+        <value>0.7</value>
     </SliderFloat_LifeSpan>
     <SliderFloat_LifeSpan_Var>
         <name>LifeSpan Var</name>
-        <value>2.8289</value>
+        <value>0</value>
     </SliderFloat_LifeSpan_Var>
     <SliderFloat_Start_Size>
         <name>Start Size</name>
-        <value>60</value>
+        <value>43.79</value>
     </SliderFloat_Start_Size>
     <SliderFloat_Start_Size_Var>
         <name>Start Size Var</name>
-        <value>30.32</value>
+        <value>0</value>
     </SliderFloat_Start_Size_Var>
     <SliderFloat_Finish_Size>
         <name>Finish Size</name>
-        <value>10</value>
+        <value>138.11</value>
     </SliderFloat_Finish_Size>
     <SliderFloat_Finish_Size_Var>
         <name>Finish Size Var</name>
@@ -53,15 +53,15 @@
     </SliderFloat_Finish_Size_Var>
     <ComboBox_Emitter_Type>
         <name>Emitter Type</name>
-        <value>0</value>
+        <value>1</value>
     </ComboBox_Emitter_Type>
     <SliderFloat_Speed>
         <name>Speed</name>
-        <value>90</value>
+        <value>138.16</value>
     </SliderFloat_Speed>
     <SliderFloat_Speed_Var>
         <name>Speed Var</name>
-        <value>30</value>
+        <value>0</value>
     </SliderFloat_Speed_Var>
     <SliderFloat_Radial_Acc>
         <name>Radial Acc</name>
@@ -85,30 +85,30 @@
     </SliderFloat_Gravity_X>
     <SliderFloat_Gravity_Y>
         <name>Gravity Y</name>
-        <value>-0</value>
+        <value>1400</value>
     </SliderFloat_Gravity_Y>
     <SliderFloat_Max_Radius>
         <name>Max Radius</name>
-        <value>100</value>
+        <value>237.6</value>
     </SliderFloat_Max_Radius>
     <SliderFloat_Max_Radius_Var>
         <name>Max Radius Var</name>
-        <value>0</value>
+        <value>244.8</value>
     </SliderFloat_Max_Radius_Var>
     <SliderFloat_Min_Radius>
         <name>Min Radius</name>
-        <value>0</value>
+        <value>74.4</value>
     </SliderFloat_Min_Radius>
     <SliderFloat_Deg._Per_Sec>
         <name>Deg. Per Sec</name>
-        <value>0</value>
+        <value>61.2</value>
     </SliderFloat_Deg._Per_Sec>
     <SliderFloat_Deg._Per_Sec_Var>
         <name>Deg. Per Sec Var</name>
-        <value>0</value>
+        <value>149.4</value>
     </SliderFloat_Deg._Per_Sec_Var>
     <SliderFloat_Radius_Speed>
         <name>Radius Speed</name>
-        <value>0</value>
+        <value>200</value>
     </SliderFloat_Radius_Speed>
 </controls>

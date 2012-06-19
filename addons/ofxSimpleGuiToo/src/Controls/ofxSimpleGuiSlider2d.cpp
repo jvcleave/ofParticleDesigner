@@ -81,6 +81,8 @@ void ofxSimpleGuiSlider2d::update() {
 }
 
 void ofxSimpleGuiSlider2d::draw(float x, float y) {
+	
+	//cout << "!!!!!!!" << endl;
 	setPos(x, y);
 	ofPoint	pointv;
 	pointv.x = ofMap((*value).x, min.x, max.x, x, x+width);

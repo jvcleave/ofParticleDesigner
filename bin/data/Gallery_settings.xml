@@ -1,10 +1,10 @@
 <controls>
     <ComboBox_TEXTURE_FILE>
         <name>TEXTURE FILE</name>
-        <value>1</value>
+        <value>3</value>
     </ComboBox_TEXTURE_FILE>
     <ComboBox_SOURCE>
         <name>SOURCE</name>
-        <value>2</value>
+        <value>3</value>
     </ComboBox_SOURCE>
 </controls>

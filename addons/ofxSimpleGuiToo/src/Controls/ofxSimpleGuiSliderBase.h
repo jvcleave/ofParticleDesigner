@@ -27,7 +27,7 @@ public:
 		targetValue	= value;
 		oldValue	= targetValue;
 		controlType = "SliderBase";
-		
+		isHidden = false;
 		setIncrement(0);
 		setSmoothing(0);
 		
@@ -159,9 +159,12 @@ public:
 
 	//--------------------------------------------------------------------- draw
 	void draw(float x, float y) {
-
+		
 //		enabled = true;
-
+		if (!isHidden) 
+		{
+			
+		
 		//update postion of gui object
 		setPos(x, y);
 
@@ -190,6 +193,7 @@ public:
 		ofDrawBitmapString(s, 3, config->sliderHeight + 14);
 		ofDisableAlphaBlending();
 		glPopMatrix();
+		}
 	}
 
 

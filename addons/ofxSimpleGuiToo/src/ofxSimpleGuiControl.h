@@ -49,9 +49,10 @@ public:
 	bool		lock;
 	bool		focused;
 	bool		newColumn;
+	bool		isHidden;
 	bool		hasTitle;
 	char		keyboardShortcut;
-
+	
 	ofxSimpleGuiControl(string name);
 	ofxSimpleGuiControl& setName(string newName);
 	ofxSimpleGuiControl& setKey(string newKey);

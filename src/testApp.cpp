@@ -118,7 +118,7 @@ void testApp::setup(){
 
 	pexID = currentPexID =  0;
 	textureID = currentTextureID = 0;
-	ofDirectory dir = ofToDataPath("", true);
+	ofDirectory dir = ofToDataPath("sampleParticles", true);
 	dir.listDir();
 	vector<ofFile> files = dir.getFiles();
 	
@@ -590,7 +590,7 @@ void testApp::loadFromParticleXML(string xmlname) {
 	ofDirectory dir = ofToDataPath("sampleParticles", true);
 
 	
-    if ( !m_emitter.loadFromXml( xmlname ) )
+    if ( !m_emitter.loadFromXml( xmlname, dir ) )
 	{
 		ofLog( OF_LOG_ERROR, "testApp::setup() - failed to load emitter config" );
 	}

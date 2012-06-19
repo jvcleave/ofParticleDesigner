@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>033A183F1590585300D5DD8B</string>
+						<string>033A184515905A2A00D5DD8B</string>
 						<key>history</key>
 						<array>
 							<string>033A18081590522A00D5DD8B</string>
@@ -372,7 +372,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>033A183E1590585300D5DD8B</string>
+										<string>033A184415905A2A00D5DD8B</string>
 										<key>history</key>
 										<array>
 											<string>033A1781159023E800D5DD8B</string>
@@ -583,14 +583,15 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>033A184615905A2A00D5DD8B</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>033A1788159023E800D5DD8B</string>
 		<string>033A1789159023E800D5DD8B</string>
 		<string>031F0C7914B417C000FAE8D2</string>
 		<string>033A180E1590524D00D5DD8B</string>
+		<string>/Volumes/WORK_IN_PROGRESS/OPENFRAMEWORKS/0071_RELEASE/apps/BUNBURY_APPS/ofParticleDesigner/ofParticleDesigner.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Volumes/WORK_IN_PROGRESS/OPENFRAMEWORKS/0071_RELEASE/apps/BUNBURY_APPS/ofParticleDesigner/ofParticleDesigner.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>9 89 2560 1489 0 0 2560 1578 </string>

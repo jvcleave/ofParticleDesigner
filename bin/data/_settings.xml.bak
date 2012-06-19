@@ -21,31 +21,31 @@
     </SliderFloat_Source_Pos_Y_Var>
     <SliderFloat_Angle>
         <name>Angle</name>
-        <value>180</value>
+        <value>360</value>
     </SliderFloat_Angle>
     <SliderFloat_Angle_Var>
         <name>Angle Var</name>
-        <value>27</value>
+        <value>360</value>
     </SliderFloat_Angle_Var>
     <SliderFloat_LifeSpan>
         <name>LifeSpan</name>
-        <value>1.25</value>
+        <value>5.4605</value>
     </SliderFloat_LifeSpan>
     <SliderFloat_LifeSpan_Var>
         <name>LifeSpan Var</name>
-        <value>5</value>
+        <value>0</value>
     </SliderFloat_LifeSpan_Var>
     <SliderFloat_Start_Size>
         <name>Start Size</name>
-        <value>24</value>
+        <value>44.21</value>
     </SliderFloat_Start_Size>
     <SliderFloat_Start_Size_Var>
         <name>Start Size Var</name>
-        <value>15</value>
+        <value>0</value>
     </SliderFloat_Start_Size_Var>
     <SliderFloat_Finish_Size>
         <name>Finish Size</name>
-        <value>64</value>
+        <value>11.84</value>
     </SliderFloat_Finish_Size>
     <SliderFloat_Finish_Size_Var>
         <name>Finish Size Var</name>
@@ -53,19 +53,19 @@
     </SliderFloat_Finish_Size_Var>
     <ComboBox_Emitter_Type>
         <name>Emitter Type</name>
-        <value>0</value>
+        <value>1</value>
     </ComboBox_Emitter_Type>
     <SliderFloat_Speed>
         <name>Speed</name>
-        <value>32.89</value>
+        <value>83</value>
     </SliderFloat_Speed>
     <SliderFloat_Speed_Var>
         <name>Speed Var</name>
-        <value>243.42</value>
+        <value>100</value>
     </SliderFloat_Speed_Var>
     <SliderFloat_Radial_Acc>
         <name>Radial Acc</name>
-        <value>-10</value>
+        <value>-1000</value>
     </SliderFloat_Radial_Acc>
     <SliderFloat_Radial_Acc_Var>
         <name>Radial Acc Var</name>
@@ -73,7 +73,7 @@
     </SliderFloat_Radial_Acc_Var>
     <SliderFloat_Tan_Acc>
         <name>Tan Acc</name>
-        <value>0</value>
+        <value>-144.74</value>
     </SliderFloat_Tan_Acc>
     <SliderFloat_Tan_Acc_Var>
         <name>Tan Acc Var</name>
@@ -81,15 +81,15 @@
     </SliderFloat_Tan_Acc_Var>
     <SliderFloat_Gravity_X>
         <name>Gravity X</name>
-        <value>0</value>
+        <value>0.13</value>
     </SliderFloat_Gravity_X>
     <SliderFloat_Gravity_Y>
         <name>Gravity Y</name>
-        <value>0</value>
+        <value>-1.32</value>
     </SliderFloat_Gravity_Y>
     <SliderFloat_Max_Radius>
         <name>Max Radius</name>
-        <value>100</value>
+        <value>135.79</value>
     </SliderFloat_Max_Radius>
     <SliderFloat_Max_Radius_Var>
         <name>Max Radius Var</name>
@@ -101,11 +101,11 @@
     </SliderFloat_Min_Radius>
     <SliderFloat_Deg._Per_Sec>
         <name>Deg. Per Sec</name>
-        <value>0</value>
+        <value>360</value>
     </SliderFloat_Deg._Per_Sec>
     <SliderFloat_Deg._Per_Sec_Var>
         <name>Deg. Per Sec Var</name>
-        <value>0</value>
+        <value>139.74</value>
     </SliderFloat_Deg._Per_Sec_Var>
     <SliderFloat_Radius_Speed>
         <name>Radius Speed</name>

@@ -42,6 +42,7 @@ public:
     void windowResized(int w, int h);
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
+	bool doUseMouse;
     
 private:
     ofxParticleEmitter m_emitter;
@@ -70,7 +71,7 @@ private:
 	GLfloat			rotatePerSecond;				// Number of degrees to rotate a particle around the source position per second
 	GLfloat			rotatePerSecondVariance;		// Variance in degrees for rotatePerSecond
     
-    bool            bPlay, bSaveParticleXML, bNormal, bAddictive;
+    bool            doPlay, doSaveParticleXML, isNormal, isAddictive;
 
     
     int             blendSrc, blendDst;
@@ -81,4 +82,12 @@ private:
     int             getBlendType(int s);
     void            saveToParticleXML();
     void            loadFromParticleXML(string xmlname);
+	
+	int pexID;
+	int textureID;
+	int currentTextureID;
+	int currentPexID;
+	vector<string> pexFileNames;
+	vector<string> textureFileNames;
+	
 };

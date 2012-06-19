@@ -23,31 +23,30 @@
 #include "testApp.h"
 
 #include "ofxSimpleGuiToo.h"
-int pexID;
-int textureID;
-int currentTextureID;
-int currentPexID;
-vector<string> pexFileNames;
-vector<string> textureFileNames;
+
 //--------------------------------------------------------------
 void testApp::setup(){
 
     ofBackground(0, 0, 0);
 	ofSetVerticalSync(true);
-    
+	pexID = 0;
+	textureID = 0;
+	currentTextureID = 0;
+	currentPexID = 0;
+	doUseMouse = false;
+	doSaveParticleXML = false;
     loadFromParticleXML( "circles.pex" );
     
-    bPlay = false;
+    doPlay = false;
         
     speed = 0.0;
     duration = -1.0;
     
-    // 'gui' is a global variable declared in ofxSimpleGuiToo.h
     //---------- SETTINGS ---------------
 	gui.addTitle("Particle Settings");
     
-	//gui.addToggle("Play", bPlay);
-    
+	//gui.addToggle("Play", doPlay);
+    gui.addToggle("Use Mouse", doUseMouse);
     gui.addSlider("Source Pos X", m_emitter.sourcePosition.x, 0.0, ofGetWidth());
     gui.addSlider("Source Pos X Var", m_emitter.sourcePositionVariance.x, 0.0, ofGetWidth());
     gui.addSlider("Source Pos Y", m_emitter.sourcePosition.y, 0.0, ofGetHeight());
@@ -110,12 +109,12 @@ void testApp::setup(){
     "GL_ONE_MINUS_DST_ALPHA", "GL_SRC_ALPHA_SATURATE"};
 	gui.addComboBox("Blend Type Src", blendSrc, 9, glTitleArray);
     gui.addComboBox("Blend Type Dest", blendDst, 9, glTitleArray);
-    gui.addButton("Normal", bNormal);
-    gui.addButton("Addictive", bAddictive);
+    gui.addButton("Normal", isNormal);
+    gui.addButton("Addictive", isAddictive);
     
     //----------- GALLERY ----------------
     gui.addPage("Gallery");
-    gui.addTitle("Partilce Texture");
+    gui.addTitle("Particle Texture");
 
 	pexID = currentPexID =  0;
 	textureID = currentTextureID = 0;
@@ -158,24 +157,24 @@ void testApp::update(){
     
     m_emitter.update();
     
-    if( bPlay ){
+    if( doPlay ){
         //ofSetWindowTitle("Clicked");
-        //bPlay = false;
+        //doPlay = false;
     }
-    else if( bNormal ){
+    else if( isNormal ){
         //ofSetWindowTitle("Normal");
-        bNormal = false;
+        isNormal = false;
         blendSrc = 4;
         blendDst = 5;
     }
-    else if( bAddictive ) {
+    else if( isAddictive ) {
         //ofSetWindowTitle("Addictive");
-        bAddictive = false;
+        isAddictive = false;
         blendSrc = 4;
         blendDst = 1;
     }
-    else if( bSaveParticleXML ) {
-        bSaveParticleXML = false;
+    else if( doSaveParticleXML ) {
+        doSaveParticleXML = false;
         saveToParticleXML();
     }
 	if (currentPexID != pexID)
@@ -314,6 +313,8 @@ void testApp::keyPressed(int key){
 			case '[': gui.prevPage(); break;
 			case ']': gui.nextPage(); break;
 			case 'p': gui.nextPageWithBlank(); break;
+			case 'm': doUseMouse = !doUseMouse; break;
+			case 's' : doSaveParticleXML = true; break;
 		}
 	}
 }
@@ -331,15 +332,21 @@ void testApp::mouseMoved(int x, int y ){
 //--------------------------------------------------------------
 void testApp::mouseDragged(int x, int y, int button){
 
-    /*m_emitter.sourcePosition.x = x;
-	m_emitter.sourcePosition.y = y;*/
+	if (doUseMouse && !gui.isOn()) 
+	{
+		m_emitter.sourcePosition.x = x;
+		m_emitter.sourcePosition.y = y;
+	}
 }
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
 
-    /*m_emitter.sourcePosition.x = x;
-	m_emitter.sourcePosition.y = y;*/
+	if (doUseMouse && !gui.isOn()) 
+	{
+		m_emitter.sourcePosition.x = x;
+		m_emitter.sourcePosition.y = y;
+	}
 }
 
 //--------------------------------------------------------------
@@ -364,7 +371,30 @@ void testApp::dragEvent(ofDragInfo dragInfo){
 
 void testApp::saveToParticleXML() {
     
-    string xmlFilename = "particle_settings.pex";
+	
+	//Open the Open File Dialog
+	ofFileDialogResult openFileResult= ofSystemLoadDialog("Select a Folder", true); 
+	ofDirectory targetDirectory(ofToDataPath("myParticles", true));
+	//Check if the user opened a file
+	if (openFileResult.bSuccess){
+		
+		ofLogVerbose("User selected a file");
+		
+		//We have a file, check it and process it
+		ofFile file (openFileResult.getPath());
+		if (file.isDirectory()) {
+			ofDirectory newTarget(file.path());
+			targetDirectory = newTarget;
+		}
+		
+	}else {
+		ofLogVerbose("User hit cancel");
+		return;
+	}
+	//targetDirectory.path()+
+	ofFile folder(targetDirectory.path());
+    string xmlFilename = targetDirectory.path() + "/" + folder.getBaseName() + ".pex";
+	//"/new_settings.pex";
 	
 	XML.saveFile(xmlFilename + ".bak");
 	
@@ -557,6 +587,9 @@ void testApp::saveToParticleXML() {
 
 void testApp::loadFromParticleXML(string xmlname) {
     
+	ofDirectory dir = ofToDataPath("sampleParticles", true);
+
+	
     if ( !m_emitter.loadFromXml( xmlname ) )
 	{
 		ofLog( OF_LOG_ERROR, "testApp::setup() - failed to load emitter config" );

@@ -111,7 +111,8 @@ public:
 	ofxParticleEmitter();
 	~ofxParticleEmitter();
 	
-	bool	loadFromXml( const std::string& filename );
+	bool	loadFromXml( const std::string& filename,  ofDirectory targetDirectory );
+	bool	loadFromXml( const std::string& filename);
 	void	update();
 	void	draw( int x = 0, int y = 0 );
 	void	exit();
@@ -143,6 +144,8 @@ public:
 	GLfloat			minRadius;						// Radius from source below which a particle dies
 	GLfloat			rotatePerSecond;				// Number of degrees to rotate a particle around the source position per second
 	GLfloat			rotatePerSecondVariance;		// Variance in degrees for rotatePerSecond
+	
+	ofDirectory baseDirectory;
 	
 protected:
 	

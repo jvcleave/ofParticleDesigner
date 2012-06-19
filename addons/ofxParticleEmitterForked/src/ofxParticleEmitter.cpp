@@ -67,6 +67,8 @@ ofxParticleEmitter::ofxParticleEmitter()
 	verticesID = 0;
 	particles = NULL;
 	vertices = NULL;
+	ofDirectory targetDirectory(ofToDataPath("", true));
+	baseDirectory = targetDirectory;
 }
 
 ofxParticleEmitter::~ofxParticleEmitter()
@@ -93,14 +95,17 @@ void ofxParticleEmitter::exit()
 
 bool ofxParticleEmitter::loadFromXml( const std::string& filename )
 {
-    // Clean up things
+    
+	
+	// Clean up things
     exit();
     
+	
 	bool ok = false;
 	
 	settings = new ofxXmlSettings();
 	
-	ok = settings->loadFile( filename );
+	ok = settings->loadFile( baseDirectory.path()+"/"+filename );
 	if ( ok )
 	{
 		parseParticleConfig();
@@ -113,6 +118,11 @@ bool ofxParticleEmitter::loadFromXml( const std::string& filename )
 	settings = NULL;
 	
 	return ok;
+}
+bool ofxParticleEmitter::loadFromXml( const std::string& filename, ofDirectory targetDirectory)
+{
+    baseDirectory = targetDirectory;
+	return loadFromXml(filename);
 }
 
 void ofxParticleEmitter::parseParticleConfig()
@@ -127,17 +137,15 @@ void ofxParticleEmitter::parseParticleConfig()
 
 	std::string imageFilename	= settings->getAttribute( "texture", "name", "" );
 	std::string imageData		= settings->getAttribute( "texture", "data", "" );
-	
 	if ( imageFilename != "" )
 	{
 		ofLog( OF_LOG_WARNING, "ofxParticleEmitter::parseParticleConfig() - loading image file" );
 		
 		texture = new ofImage();
-		texture->loadImage( imageFilename );
+		changeTexture( imageFilename );
 		texture->setUseTexture( true );
 		texture->setAnchorPercent( 0.5f, 0.5f );
         
-        textureName = imageFilename;
 		
 		textureData = texture->getTextureReference().getTextureData();
 	}
@@ -374,7 +382,8 @@ void ofxParticleEmitter::update()
 			
 			// If maxRadius is greater than 0 then the particles are going to spin otherwise
 			// they are effected by speed and gravity
-			if (emitterType == kParticleTypeRadial) {
+			if (emitterType == kParticleTypeRadial) 
+			{
 				
                 // FIX 2
                 // Update the angle of the particle from the sourcePosition and the radius.  This is only
@@ -389,7 +398,8 @@ void ofxParticleEmitter::update()
 				
 				if (currentParticle->radius < minRadius)
 					currentParticle->timeToLive = 0;
-			} else {
+			} else 
+			{
 				ofVec2f tmp, radial, tangential;
                 
                 radial = ofVec2f::zero();
@@ -446,7 +456,10 @@ void ofxParticleEmitter::update()
 			// to be packed together at the start of the array so that a particle which has run out of
 			// life will only drop into this clause once
 			if(particleIndex != particleCount - 1)
+			{
 				particles[particleIndex] = particles[particleCount - 1];
+				
+			}
 			particleCount--;
 		}
 	}
@@ -622,7 +635,7 @@ void ofxParticleEmitter::drawPointsOES()
 
 void ofxParticleEmitter::changeTexture(string filename) {
     
-    texture->loadImage(filename);
+    texture->loadImage(baseDirectory.path()+"/"+filename);
     textureName = filename;
 }
 

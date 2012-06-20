@@ -1,7 +1,7 @@
 <controls>
     <Toggle_Use_Mouse>
         <name>Use Mouse</name>
-        <value>1</value>
+        <value>0</value>
     </Toggle_Use_Mouse>
     <SliderFloat_Source_Pos_X>
         <name>Source Pos X</name>
@@ -53,7 +53,7 @@
     </SliderFloat_Finish_Size_Var>
     <ComboBox_Emitter_Type>
         <name>Emitter Type</name>
-        <value>1</value>
+        <value>0</value>
     </ComboBox_Emitter_Type>
     <SliderFloat_Speed>
         <name>Speed</name>
@@ -89,26 +89,26 @@
     </SliderFloat_Gravity_Y>
     <SliderFloat_Max_Radius>
         <name>Max Radius</name>
-        <value>237.6</value>
+        <value>100</value>
     </SliderFloat_Max_Radius>
     <SliderFloat_Max_Radius_Var>
         <name>Max Radius Var</name>
-        <value>244.8</value>
+        <value>0</value>
     </SliderFloat_Max_Radius_Var>
     <SliderFloat_Min_Radius>
         <name>Min Radius</name>
-        <value>74.4</value>
+        <value>0</value>
     </SliderFloat_Min_Radius>
     <SliderFloat_Deg._Per_Sec>
         <name>Deg. Per Sec</name>
-        <value>61.2</value>
+        <value>0</value>
     </SliderFloat_Deg._Per_Sec>
     <SliderFloat_Deg._Per_Sec_Var>
         <name>Deg. Per Sec Var</name>
-        <value>149.4</value>
+        <value>0</value>
     </SliderFloat_Deg._Per_Sec_Var>
     <SliderFloat_Radius_Speed>
         <name>Radius Speed</name>
-        <value>200</value>
+        <value>0</value>
     </SliderFloat_Radius_Speed>
 </controls>

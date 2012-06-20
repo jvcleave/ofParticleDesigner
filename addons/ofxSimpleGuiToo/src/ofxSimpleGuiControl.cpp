@@ -46,6 +46,7 @@ ofxSimpleGuiControl::ofxSimpleGuiControl(string name) {
 	lock	  = false;
 	focused	  = false;
 	newColumn = false;
+	isHidden = false;
 	setKeyboardShortcut(0);
 
 	setup();

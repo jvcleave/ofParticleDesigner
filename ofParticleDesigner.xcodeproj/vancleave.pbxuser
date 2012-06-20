@@ -300,7 +300,7 @@
 		fRef = 346845F61590E932002441A1 /* ofxParticleDesignerUI.h */;
 		name = "ofxParticleDesignerUI.h: 78";
 		rLen = 19;
-		rLoc = 2460;
+		rLoc = 2499;
 		rType = 0;
 		vrLen = 2088;
 		vrLoc = 332;
@@ -400,7 +400,7 @@
 		fRef = 346845F71590E932002441A1 /* ofxParticleDesignerUI.cpp */;
 		name = "ofxParticleDesignerUI.cpp: 99";
 		rLen = 0;
-		rLoc = 3328;
+		rLoc = 3751;
 		rType = 0;
 		vrLen = 2627;
 		vrLoc = 2140;
@@ -568,16 +568,16 @@
 	};
 	346845F61590E932002441A1 /* ofxParticleDesignerUI.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1183, 1118}}";
-			sepNavSelRange = "{2656, 0}";
-			sepNavVisRange = "{0, 1905}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 1118}}";
+			sepNavSelRange = "{611, 0}";
+			sepNavVisRange = "{354, 2137}";
 		};
 	};
 	346845F71590E932002441A1 /* ofxParticleDesignerUI.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1183, 8164}}";
-			sepNavSelRange = "{17924, 0}";
-			sepNavVisRange = "{16706, 1223}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 7566}}";
+			sepNavSelRange = "{15032, 0}";
+			sepNavVisRange = "{14244, 1570}";
 			sepNavWindowFrame = "{{1695, 50}, {1370, 995}}";
 		};
 	};
@@ -846,7 +846,7 @@
 		fRef = 346845F71590E932002441A1 /* ofxParticleDesignerUI.cpp */;
 		name = "ofxParticleDesignerUI.cpp: 99";
 		rLen = 0;
-		rLoc = 3328;
+		rLoc = 3751;
 		rType = 0;
 		vrLen = 2228;
 		vrLoc = 2406;
@@ -956,7 +956,7 @@
 		fRef = 346845F61590E932002441A1 /* ofxParticleDesignerUI.h */;
 		name = "ofxParticleDesignerUI.h: 78";
 		rLen = 19;
-		rLoc = 2460;
+		rLoc = 2499;
 		rType = 0;
 		vrLen = 2038;
 		vrLoc = 382;
@@ -1006,7 +1006,7 @@
 		fRef = 346845F71590E932002441A1 /* ofxParticleDesignerUI.cpp */;
 		name = "ofxParticleDesignerUI.cpp: 97";
 		rLen = 0;
-		rLoc = 3149;
+		rLoc = 3572;
 		rType = 0;
 		vrLen = 2706;
 		vrLoc = 1835;
@@ -1016,7 +1016,7 @@
 		fRef = 346845F71590E932002441A1 /* ofxParticleDesignerUI.cpp */;
 		name = "ofxParticleDesignerUI.cpp: 97";
 		rLen = 0;
-		rLoc = 3149;
+		rLoc = 3572;
 		rType = 0;
 		vrLen = 2663;
 		vrLoc = 1835;
@@ -1026,7 +1026,7 @@
 		fRef = 346845F61590E932002441A1 /* ofxParticleDesignerUI.h */;
 		name = "ofxParticleDesignerUI.h: 78";
 		rLen = 15;
-		rLoc = 2482;
+		rLoc = 2521;
 		rType = 0;
 		vrLen = 2039;
 		vrLoc = 382;
@@ -1036,7 +1036,7 @@
 		fRef = 346845F71590E932002441A1 /* ofxParticleDesignerUI.cpp */;
 		name = "ofxParticleDesignerUI.cpp: 97";
 		rLen = 0;
-		rLoc = 3149;
+		rLoc = 3572;
 		rType = 0;
 		vrLen = 2702;
 		vrLoc = 1835;
@@ -1046,7 +1046,7 @@
 		fRef = 346845F71590E932002441A1 /* ofxParticleDesignerUI.cpp */;
 		name = "ofxParticleDesignerUI.cpp: 101";
 		rLen = 0;
-		rLoc = 3329;
+		rLoc = 3752;
 		rType = 0;
 		vrLen = 2622;
 		vrLoc = 2145;
@@ -1056,7 +1056,7 @@
 		fRef = 346845F61590E932002441A1 /* ofxParticleDesignerUI.h */;
 		name = "ofxParticleDesignerUI.h: 83";
 		rLen = 0;
-		rLoc = 2656;
+		rLoc = 2695;
 		rType = 0;
 		vrLen = 1905;
 		vrLoc = 0;
@@ -1066,7 +1066,7 @@
 		fRef = 346845F71590E932002441A1 /* ofxParticleDesignerUI.cpp */;
 		name = "ofxParticleDesignerUI.cpp: 578";
 		rLen = 133;
-		rLoc = 17617;
+		rLoc = 18027;
 		rType = 0;
 		vrLen = 1236;
 		vrLoc = 16693;
@@ -1076,10 +1076,69 @@
 		fRef = 346845F71590E932002441A1 /* ofxParticleDesignerUI.cpp */;
 		name = "ofxParticleDesignerUI.cpp: 584";
 		rLen = 0;
-		rLoc = 17924;
+		rLoc = 18334;
 		rType = 0;
 		vrLen = 1223;
 		vrLoc = 16706;
+	};
+	3471400815921EBE00DE4970 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 346845F71590E932002441A1 /* ofxParticleDesignerUI.cpp */;
+		name = "ofxParticleDesignerUI.cpp: 25";
+		rLen = 29;
+		rLoc = 446;
+		rType = 0;
+		vrLen = 1300;
+		vrLoc = 206;
+	};
+	3471400915921EBE00DE4970 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 346845F61590E932002441A1 /* ofxParticleDesignerUI.h */;
+		name = "ofxParticleDesignerUI.h: 78";
+		rLen = 11;
+		rLoc = 2456;
+		rType = 0;
+		vrLen = 2228;
+		vrLoc = 435;
+	};
+	3471400A15921EBE00DE4970 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 346845F61590E932002441A1 /* ofxParticleDesignerUI.h */;
+		name = "ofxParticleDesignerUI.h: 30";
+		rLen = 0;
+		rLoc = 611;
+		rType = 0;
+		vrLen = 2025;
+		vrLoc = 31;
+	};
+	3471400F159225F400DE4970 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 346845F61590E932002441A1 /* ofxParticleDesignerUI.h */;
+		name = "ofxParticleDesignerUI.h: 30";
+		rLen = 0;
+		rLoc = 611;
+		rType = 0;
+		vrLen = 2137;
+		vrLoc = 354;
+	};
+	34714010159225F400DE4970 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'sampleDirectory' was not declared in this scope";
+		fRef = 346845F71590E932002441A1 /* ofxParticleDesignerUI.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 439;
+		rType = 1;
+	};
+	34714011159225F400DE4970 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 346845F71590E932002441A1 /* ofxParticleDesignerUI.cpp */;
+		name = "ofxParticleDesignerUI.cpp: 440";
+		rLen = 0;
+		rLoc = 15032;
+		rType = 0;
+		vrLen = 1570;
+		vrLoc = 14244;
 	};
 	E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 		activeBuildConfigurationName = Debug;
@@ -1100,7 +1159,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					1005,
+					1118,
 					20,
 					48,
 					43,
@@ -1214,6 +1273,12 @@
 			34714004159129DC00DE4970 /* PBXTextBookmark */ = 34714004159129DC00DE4970 /* PBXTextBookmark */;
 			34714005159129DC00DE4970 /* PBXTextBookmark */ = 34714005159129DC00DE4970 /* PBXTextBookmark */;
 			34714006159129DC00DE4970 /* PBXTextBookmark */ = 34714006159129DC00DE4970 /* PBXTextBookmark */;
+			3471400815921EBE00DE4970 /* PBXTextBookmark */ = 3471400815921EBE00DE4970 /* PBXTextBookmark */;
+			3471400915921EBE00DE4970 /* PBXTextBookmark */ = 3471400915921EBE00DE4970 /* PBXTextBookmark */;
+			3471400A15921EBE00DE4970 /* PBXTextBookmark */ = 3471400A15921EBE00DE4970 /* PBXTextBookmark */;
+			3471400F159225F400DE4970 /* PBXTextBookmark */ = 3471400F159225F400DE4970 /* PBXTextBookmark */;
+			34714010159225F400DE4970 /* XCBuildMessageTextBookmark */ = 34714010159225F400DE4970 /* XCBuildMessageTextBookmark */;
+			34714011159225F400DE4970 /* PBXTextBookmark */ = 34714011159225F400DE4970 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 346844A8158FC047002441A1 /* Source Control */;
 		userBuildSettings = {

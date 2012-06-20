@@ -1,10 +1,10 @@
 <controls>
     <ColorPicker_Start_Color>
         <name>Start Color</name>
-        <values_0>0.15</values_0>
-        <values_1>0.06</values_1>
+        <values_0>0</values_0>
+        <values_1>0</values_1>
         <values_2>1</values_2>
-        <values_3>1</values_3>
+        <values_3>0.7</values_3>
     </ColorPicker_Start_Color>
     <ColorPicker_Start_Color_Var>
         <name>Start Color Var</name>
@@ -16,9 +16,9 @@
     <ColorPicker_End_Color>
         <name>End Color</name>
         <values_0>0</values_0>
-        <values_1>0.14</values_1>
-        <values_2>0.23</values_2>
-        <values_3>0</values_3>
+        <values_1>0</values_1>
+        <values_2>1</values_2>
+        <values_3>0.1</values_3>
     </ColorPicker_End_Color>
     <ColorPicker_End_Color_Var>
         <name>End Color Var</name>
@@ -33,7 +33,7 @@
     </ComboBox_Blend_Type_Src>
     <ComboBox_Blend_Type_Dest>
         <name>Blend Type Dest</name>
-        <value>1</value>
+        <value>6</value>
     </ComboBox_Blend_Type_Dest>
     <Button_Normal>
         <name>Normal</name>

@@ -22,14 +22,17 @@ ofxParticleDesignerUI::ofxParticleDesignerUI()
     duration = -1.0;
 }
 
-
-void ofxParticleDesignerUI::setup()
+void ofxParticleDesignerUI::addDirectory(string filePath)
 {
-
+	ofDirectory directory(ofToDataPath(filePath, true));
+	directory.listDir();
+	directories.push_back(directory);
 	
-	sampleDirectory.open(ofToDataPath("sampleParticles", true));
-	sampleDirectory.listDir();
-	vector<ofFile> files = sampleDirectory.getFiles();
+	//----------- GALLERY ----------------
+    gui.addPage("Gallery: "+ofToString(directory.size()));
+    gui.addTitle("Particle Texture");
+	
+	vector<ofFile> files = directory.getFiles();
 	
 	for(int i=0; i<files.size(); i++)
 	{
@@ -46,8 +49,16 @@ void ofxParticleDesignerUI::setup()
 			textureFileNames.push_back(fileName);
 		}
 	}
-	
+	gui.addComboBox("TEXTURE FILE", textureID, textureFileNames.size(),  &textureFileNames[0]);
+    gui.addComboBox("SOURCE", pexID, pexFileNames.size(),  &pexFileNames[0]);
+}
+void ofxParticleDesignerUI::setup()
+{
 
+	
+	
+	
+	addDirectory("sampleParticles");
     loadSample();
 	createGUI();
 	
@@ -126,7 +137,7 @@ void ofxParticleDesignerUI::createGUI()
     gui.addButton("Addictive", isAddictive);
     
     //----------- GALLERY ----------------
-    gui.addPage("Gallery");
+   /* gui.addPage("Gallery");
     gui.addTitle("Particle Texture");
 	
 	pexID = currentPexID =  0;
@@ -135,7 +146,7 @@ void ofxParticleDesignerUI::createGUI()
 	
 	
 	gui.addComboBox("TEXTURE FILE", textureID, textureFileNames.size(),  &textureFileNames[0]);
-    gui.addComboBox("SOURCE", pexID, pexFileNames.size(),  &pexFileNames[0]);
+    gui.addComboBox("SOURCE", pexID, pexFileNames.size(),  &pexFileNames[0]);*/
     gui.setPage(1);
     gui.show();
 	
@@ -426,7 +437,7 @@ void ofxParticleDesignerUI::saveToParticleXML() {
 void ofxParticleDesignerUI::loadFromParticleXML(string xmlname) {
     
 	
-    if ( !emitter.loadFromXml( xmlname, sampleDirectory ) )
+    if ( !emitter.loadFromXml( xmlname ) )
 	{
 		ofLog( OF_LOG_ERROR, "ofxParticleDesignerUI::setup() - failed to load emitter config" );
 	}

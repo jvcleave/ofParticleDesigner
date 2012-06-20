@@ -27,6 +27,7 @@ public:
 	void onMousePressed(int x, int y);
 	void onKeyPressed(int key);
 	void createGUI();
+	void addDirectory(string filePath);
 private:
 	ofxParticleEmitter emitter;
 	
@@ -75,8 +76,7 @@ private:
 	bool doUseMouse;
 	vector<string> pexFileNames;
 	vector<string> textureFileNames;
-	ofDirectory sampleDirectory;
-	
+	vector<ofDirectory> directories;
 	ofxSimpleGuiToo gui;
 	vector<ofxSimpleGuiControl*> gravityControls;
 	vector<ofxSimpleGuiControl*> radialControls;
